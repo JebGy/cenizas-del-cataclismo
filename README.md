@@ -1,6 +1,6 @@
 # 🗡️ Wiki del Modpack & Guía de Progresión de Jefes (Forge 1.20.1)
 
-Bienvenido a la enciclopedia oficial del modpack. Este documento detalla todos los sistemas principales, mecánicas de combate, controles, **bestiario con debilidades de jefes**, **guía de minería y capas (Y-levels)**, **consejos de mejoras de equipo** y una **ruta estructurada por niveles (Tiers)**.
+Bienvenido a la enciclopedia oficial del modpack **Cenizas del Cataclismo**. Este documento detalla todos los sistemas principales, mecánicas de combate, controles, **bestiario con debilidades de jefes**, **guía de minería y capas (Y-levels)**, **consejos de mejoras de equipo**, y una **ruta estructurada por niveles (Tiers)**.
 
 ---
 
@@ -23,6 +23,10 @@ Bienvenido a la enciclopedia oficial del modpack. Este documento detalla todos l
 * **Ataque a través de la vegetación:** Puedes golpear libremente a enemigos detrás de hierba alta sin que tu golpe sea bloqueado.
 * **Dual Wielding:** Puedes empuñar dos armas (una en cada mano) para encadenar combos alternados a dos manos.
 
+### 💖 Sistema de Revivir en Multijugador (*PlayerRevive + CreativeCore*)
+* **Estado de Desangrado (*Bleedout*):** Cuando un jugador pierde toda su vida, no muere instantáneamente; cae al suelo derribado.
+* **Revivir a un Aliado:** Acércate a tu compañero caído y mantén presionado **Clic Derecho** durante 5 segundos para reanimarlo antes de que su temporizador de desangrado llegue a cero.
+
 ### 🪂 Resistencia, Vida y Parapente (*Paraglider*)
 * **Stamina:** Correr, planear y ciertas acciones consumen la barra de resistencia verde.
 * **Estatuas de la Diosa (Goddess Statues):** Encuéntralas en aldeas o estructuras. Ofrece **4 Spirit Orbs / Contenedores de Corazón** para aumentar permanentemente tus corazones de vida o tu barra de stamina.
@@ -35,6 +39,7 @@ Bienvenido a la enciclopedia oficial del modpack. Este documento detalla todos l
 * **Sophisticated Backpacks:** Mochilas mejorables con filtros de recogida automática, mejoras de alimentación, compresión y magnetismo.
 * **Waystones:** Monolitos de viaje rápido repartidos por aldeas y mazmorras. Actívalos haciendo clic derecho para teletransportarte entre ellos consumiendo experiencia o usando *Warp Stones*.
 * **Lootr:** Cada cofre de mazmorra tiene textura dorada/metálica y genera botín instanciado individualmente para cada jugador.
+* **Sparse Structures + WDA Compat:** Regula la distancia de generación de estructuras para evitar saturación del mundo y optimizar los FPS.
 
 ---
 
@@ -83,16 +88,26 @@ A continuación se detallan las mecánicas de combate y puntos débiles clave de
 
 ---
 
-### ❄️ Mowzie's Mobs
+### 👁️ Qliphoth Awakening & Souls Like Bosses
+* **Entidades del Árbol Qliphoth (*Qliphoth Awakening*):**
+  * *Mecánica:* Múltiples fases de combate, ataques de corrupción mental y desgarro de alma.
+  * *Debilidad:* Equipar las armaduras forjadas de *Qliphoth Armaments* reduce el daño de corrupción mental. Usa armas imbuidas en luz sagrada.
+* **Jefes Oscuros de Melkor (*Souls Like Bosses*):**
+  * *Mecánica:* Jefes colosales de fantasía oscura con proyectiles oscuros, ráfagas de fuego negro y combos pesados.
+  * *Debilidad:* Rueda (<kbd>Alt Izq</kbd>) en el momento del swing pesado para aprovechar los frames de invulnerabilidad y ataca en los huecos entre sus combos.
+
+---
+
+### ❄️ Mowzie's Mobs & Alex's Mobs
 * **Ferrous Wroughtnaut (Wrought Chamber - Subsuelo):**
   * *Mecánica:* Inmune a todo tipo de daño por el frente y costados (armadura 100% impenetrable).
   * *Debilidad:* Cuando descargue su hacha vertical contra el suelo, quedará atascada durante 3 segundos. **Ataca la gema roja brillante de su espalda**.
 * **Frostmaw (Picos Nevados):**
   * *Mecánica:* Rayo congelador de hielo continuo y golpes sísmicos.
   * *Debilidad:* Inicia el combate con un golpe crítico sigiloso mientras duerme. Es altamente vulnerable al daño de fuego (*Fire Aspect / Ignitium*).
-* **Barako, the Sun Chief (Aldeas de Sabana):**
-  * *Mecánica:* Dispara rayos solares continuos e invoca hordas de máscaras Barakoa.
-  * *Debilidad:* Elimina primero a los súbditos Barakoa para que no desvíen tus ataques. Ataca a Barako con armas rápidas mientras canaliza su recarga solar.
+* **Void Worm (*Alex's Mobs* - The End):**
+  * *Mecánica:* Gusano espacial gigante que vuela a través del vacío del End disparando rayos prismáticos.
+  * *Debilidad:* Ataca sus segmentos corporales con arcos o armas arrojadizas y esquiva sus portales de teletransporte.
 
 ---
 
@@ -169,8 +184,6 @@ Con la generación de terreno de Minecraft 1.20.1 y los mods de estructuras, est
 ## 5. 🛡️ Guía de Mejoras de Equipamiento y Progresión
 
 ### 🎒 Progresión de Mochilas (*Sophisticated Backpacks*)
-No acumules ítems en cofres convencionales; fabrica y mejora tu mochila conforme avanzas de Tier:
-
 ```mermaid
 graph LR
     M0["Mochila de Cuero (27 slots, 1 upgrade)"] --> M1["Mochila de Hierro (54 slots, 2 upgrades)"]
@@ -189,7 +202,7 @@ graph LR
 
 ### ⚔️ Altar de Almas & Armas Legendarias (*Soulslike Weaponry*)
 * **Fabricación del Altar de Infusión:** Se crea con bloques de obsidiana, lingotes de oro y diamantes.
-* **Lord Souls (Almas de Reyes):** Cada jefe derrotado (Cataclysm, Mowzie, BoMD, etc.) suelta almas legendarias.
+* **Lord Souls (Almas de Reyes):** Cada jefe derrotado (Cataclysm, Mowzie, BoMD, Souls Like Bosses, etc.) suelta almas legendarias.
 * **Forjado de Armas Míticas:**
   * *Moonlight Greatsword:* Dispara ondas de corte mágico canalizadas (<kbd>R</kbd>).
   * *Nightfall:* Martillo pesado que invoca pilares de fuego infernal.
@@ -201,11 +214,11 @@ graph LR
 
 ```mermaid
 graph TD
-    T0["Tier 0: Preparación & Mazmorras Iniciales"] --> T1["Tier 1: Cazador del Overworld"]
+    T0["Tier 0: Preparación & Mazmorras Iniciales"] --> T1["Tier 1: Cazador del Overworld & Fauna Salvaje"]
     T1 --> T2["Tier 2: Criptas, Océanos & Mazmorras Subterráneas"]
     T2 --> T3["Tier 3: La Forja del Nether (Incendium & Cataclysm)"]
-    T3 --> T4["Tier 4: El Vértice del Fin (The End & Mofu's Constellation)"]
-    T4 --> T5["Tier 5: Los Reyes Supremos & Apocalipsis"]
+    T3 --> T4["Tier 4: El Vértice del Fin (The End, Void Worm & Mofu's Constellation)"]
+    T4 --> T5["Tier 5: Los Reyes Supremos, Qliphoth & Apocalipsis"]
 ```
 
 ---
@@ -234,6 +247,7 @@ graph TD
 | **Mutant Zombie & Creeper** | *Mutant Monsters* | Generación nocturna / Uso de Chemical X | Manos de zombi mutante, fragmentos de creeper |
 | **Skeleton King / Dread Knights**| *RealmRPG Skeletons* | Criptas de piedra en bosques oscuros | Huesos antiguos, arcos de gran calibre |
 | **Gnumus Chieftain** | *Gnumus Settlement* | Asentamientos gnumus subterráneos | Equipamiento tribal y amuletos |
+| **Grizzly Bear / Crocodile / Anaconda** | *Alex's Mobs* | Bosques, pantanos y ríos selváticos | Pieles reforzadas, venenos y colmillos |
 
 ---
 
@@ -272,6 +286,7 @@ graph TD
 | Jefe / Criatura | Mod de Origen | Ubicación / Invocación | Botín Destacado |
 | :--- | :--- | :--- | :--- |
 | **Ender Dragon** | *Minecraft Vanilla Overhaul* | Isla Central del End | Huevo de dragón, acceso al End exterior |
+| **Void Worm** | *Alex's Mobs* | Invocado arrojando un *Mysterious Worm* al vacío del End | Ojo del Vacío, armadura prismática |
 | **Obsidilith** | *Bosses of Mass Destruction* | Islas flotantes de obsidiana en el End | Ojo de runas de obsidiana, impulso gravitacional |
 | **Ender Guardian** | *L_Ender's Cataclysm* | *Ruined Citadel* en las islas exteriores del End | Guantelete del Guardián, Escudo del Vacío |
 | **The Leviathan** | *L_Ender's Cataclysm* | *Sunken City* (Abismo de las profundidades del End/Mar) | Diente de Leviathan, Lanza de las Mareas |
@@ -280,10 +295,12 @@ graph TD
 ---
 
 ### Tier 5: Apocalipsis & Señores del Caos (Endgame Supremo)
-> **Equipamiento Recomendado:** Set completo de Cataclysm o Armas del Fin de *Soulslike Weaponry* con encantamientos de nivel máximo, todas las reliquias activadas.
+> **Equipamiento Recomendado:** Set completo de Cataclysm, Armaduras de *Qliphoth Armaments* o Armas del Fin de *Soulslike Weaponry* con encantamientos de nivel máximo, todas las reliquias activadas.
 
 | Jefe / Criatura | Mod de Origen | Ubicación / Invocación | Botín Destacado |
 | :--- | :--- | :--- | :--- |
+| **Entidades Corruptas del Qliphoth** | *Qliphoth Awakening* | Ritos de Invocación del Árbol Qliphoth | Almas de la Corrupción Primigenia, Armas Qliphoth |
+| **Melkor & Guardianes Oscuros** | *Souls Like Bosses* | Altares y Arenas de Souls Like Bosses | Armaduras de la Sombra, Mandoble de la Oscuridad |
 | **Ashlord (Infernal Dragon)** | *Bosses' Rise* | Caldera Volcánica de Bosses Rise | Núcleo del Dragón Cenizo, Mandoble del Fuego Eterno |
 | **Skor, the Frost Yeti** | *Bosses' Rise* | Gran Pico Nevado | Corazón de Yeti, Armadura de Escarcha Primordial |
 | **Nerakyss, the Kraken** | *Bosses' Rise* | Fosa Mariana de los Océanos Profundos | Tentáculo de Kraken, Tridente de las Tempestades |
@@ -297,6 +314,9 @@ graph TD
 
 ### 👑 Jefes y Criaturas
 * **L_Ender's Cataclysm:** El rey de las batallas épicas con arenas personalizadas, música y mecánicas estilo MMO.
+* **Alex's Mobs:** Añade más de 80 criaturas detalladas con animaciones fluidas, comportamientos de ecosistema y el temible *Void Worm*.
+* **Qliphoth Awakening:** Jefes y armamentos inspirados en la mitología cabalística y deidades oscuras.
+* **Souls Like Bosses:** Jefes gigantescos inspirados directamente en Dark Souls y Elden Ring.
 * **Mowzie's Mobs:** Criaturas con animaciones 3D espectaculares y comportamientos de combate inteligentes.
 * **EEEAB's Mobs:** Nuevas variantes de no-muertos y guardianes antiguos con mecánicas de desvío y contraataque.
 * **Bosses of Mass Destruction:** Jefes visualmente limpios inspirados en RPGs de acción.
@@ -308,13 +328,15 @@ graph TD
 
 ### 🏛️ Generación de Mundo y Mazmorras
 * **When Dungeons Arise:** Fortalezas en los cielos, palacios y barcos pirata colosales.
+* **Sparse Structures + WDA Compat:** Optimiza las distancias de generación de estructuras para un mundo limpio y fluido.
 * **Dungeons and Taverns:** Estructuras que respetan el estilo vainilla pero con interiores detallados y trampas.
 * **The Graveyard:** Cementerios góticos, mausoleos y catacumbas embrujadas.
 * **Incendium:** Overhaul total del Nether con más de 8 biomas nuevos y fortalezas volcánicas.
 * **Much More Dungeons:** Mazmorras de torre verticales para el progreso intermedio.
 * **ATi Structures & Nordic Adventure:** Aldeas nórdicas, campamentos vikingos y ruinas de expedición.
 
-### 🛠️ Utilidad, Calidad de Vida & RPG
+### 🛠️ Utilidad, Calidad de Vida & Multijugador
+* **PlayerRevive + CreativeCore:** Permite revivir a aliados caídos manteniendo clic derecho durante el desangrado.
 * **Jade & JEI:** Información en pantalla de bloques/mobs y recetas completas de crafteo.
 * **Boss Checklist:** Lista interactiva para marcar qué jefes has derrotado y cuáles te faltan en tu mundo.
 * **Waystones:** Teletransporte equilibrado entre puntos clave del mapa.
@@ -325,7 +347,8 @@ graph TD
 
 ## 8. Consejos Clave de Supervivencia
 
-1. **Usa el Boss Checklist:** Si no sabes qué jefe enfrentar a continuación, abre el menú de *Boss Checklist* (<kbd>L</kbd>) para ver la lista completa y sus condiciones de aparición.
-2. **Combina Armas de Better Combat:** No uses solo una espada; prueba llevar una alabarda para mantener distancia con hordas o dagas duales para infligir daño rápido a jefes lentos.
-3. **No subestimes el Parapente:** En estructuras de *When Dungeons Arise* y el *Nether de Incendium*, el parapente te salvará la vida ante empujes al vacío o lava.
-4. **Mejora tus mochilas rápido:** La mejora de *Magnet* (imán) y *Auto-Feed* (auto-alimentación) en *Sophisticated Backpacks* te permite concentrarte 100% en esquivar durante las peleas contra jefes.
+1. **Trabajo en Equipo con PlayerRevive:** En peleas contra jefes difíciles (como *Ignis* o *Netherite Monstrosity*), si un compañero cae, otro jugador puede tanquear al jefe mientras el segundo realiza la reanimación.
+2. **Usa el Boss Checklist:** Abre el menú de *Boss Checklist* (<kbd>L</kbd>) para ver la lista completa de jefes y sus condiciones de aparición.
+3. **Combina Armas de Better Combat:** No uses solo una espada; prueba llevar una alabarda para mantener distancia con hordas o dagas duales para infligir daño rápido a jefes lentos.
+4. **No subestimes el Parapente:** En estructuras de *When Dungeons Arise* y el *Nether de Incendium*, el parapente te salvará la vida ante empujes al vacío o lava.
+5. **Nota sobre Valley & Sky:** *Valley & Sky* es un mod en desarrollo cerrado disponible únicamente por el Discord oficial de sus creadores (aún sin lanzamiento público en CurseForge/Modrinth). En su lugar, el modpack cuenta con **Souls Like Bosses**, **Bosses' Rise** y **Soulslike Weaponry**, cubriendo ampliamente las batallas de estilo Elden Ring.
