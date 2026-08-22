@@ -1,6 +1,6 @@
 /**
  * CENIZAS DEL CATACLISMO — WIKI & CRÓNICAS DE RAYCRESARK
- * Protocol: Premium Utilitarian Minimalism & Editorial UI (Single Page Engine)
+ * Protocol: Premium Utilitarian Minimalism & Editorial UI (Sidebar + Single Page Engine)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderJefes('all');
   renderMods('all', '');
   initNavigation();
+  initMobileDrawer();
   initSearchAndFilters();
   initActiveSectionObserver();
 });
@@ -19,6 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function initNavigation() {
   const navLinks = document.querySelectorAll('.nav-link');
+  const sidebar = document.getElementById('sidebar');
+  const backdrop = document.getElementById('sidebar-backdrop');
 
   navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
@@ -32,6 +35,12 @@ function initNavigation() {
 
         navLinks.forEach(l => l.classList.remove('active'));
         link.classList.add('active');
+
+        // Close mobile drawer if open
+        if (sidebar && sidebar.classList.contains('open')) {
+          sidebar.classList.remove('open');
+          if (backdrop) backdrop.classList.remove('active');
+        }
       }
     });
   });
@@ -44,6 +53,28 @@ function initNavigation() {
         initialTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 100);
     }
+  }
+}
+
+/* ==========================================================================
+   MENU HAMBURGUESA Y DRAWER MÓVIL
+   ========================================================================== */
+
+function initMobileDrawer() {
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const sidebar = document.getElementById('sidebar');
+  const backdrop = document.getElementById('sidebar-backdrop');
+
+  if (menuBtn && sidebar && backdrop) {
+    menuBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+      backdrop.classList.toggle('active');
+    });
+
+    backdrop.addEventListener('click', () => {
+      sidebar.classList.remove('open');
+      backdrop.classList.remove('active');
+    });
   }
 }
 
@@ -69,7 +100,7 @@ function initActiveSectionObserver() {
       }
     });
   }, {
-    rootMargin: '-20% 0px -70% 0px'
+    rootMargin: '-15% 0px -75% 0px'
   });
 
   sections.forEach(sec => observer.observe(sec));
