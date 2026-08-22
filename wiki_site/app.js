@@ -1,95 +1,78 @@
 /**
  * CENIZAS DEL CATACLISMO — WIKI & CRÓNICAS DE RAYCRESARK
- * Protocol: Premium Utilitarian Minimalism & Editorial UI
+ * Protocol: Premium Utilitarian Minimalism & Editorial UI (Single Page Engine)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initRouter();
   renderJugadores();
   renderClases();
-  renderJefes();
-  renderMods();
+  renderJefes('all');
+  renderMods('all', '');
+  initNavigation();
   initSearchAndFilters();
-  initScrollAnimations();
+  initActiveSectionObserver();
 });
 
 /* ==========================================================================
-   ENRUTADOR CLIENT-SIDE (SPA)
+   NAVEGACIÓN SINGLE PAGE CON SCROLL SUAVE
    ========================================================================== */
 
-function initRouter() {
+function initNavigation() {
   const navLinks = document.querySelectorAll('.nav-link');
-  const sections = document.querySelectorAll('.page-section');
 
-  function navigate(targetId) {
-    const validTargets = ['history', 'wiki', 'mods', 'jugadores', 'clases', 'jefes', 'progresion'];
-    const activeTarget = validTargets.includes(targetId) ? targetId : 'history';
-
-    // Update active nav links
-    navLinks.forEach(link => {
-      const linkTarget = link.getAttribute('data-target') || link.getAttribute('href').replace('#', '');
-      if (linkTarget === activeTarget) {
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
-      }
-    });
-
-    // Update active sections
-    sections.forEach(sec => {
-      if (sec.id === `view-${activeTarget}`) {
-        sec.classList.add('active');
-      } else {
-        sec.classList.remove('active');
-      }
-    });
-
-    // Trigger scroll entry animation for the newly visible section
-    setTimeout(() => {
-      initScrollAnimations();
-    }, 50);
-
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  // Handle click on nav items
   navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
-      const target = link.getAttribute('data-target') || link.getAttribute('href').replace('#', '');
-      window.location.hash = target;
-      navigate(target);
+      const targetId = link.getAttribute('href').replace('#', '');
+      const targetSection = document.getElementById(targetId);
+
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.replaceState(null, '', `#${targetId}`);
+
+        navLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      }
     });
   });
 
-  // Handle hash change & initial load
-  window.addEventListener('hashchange', () => {
-    const hash = window.location.hash.replace('#', '') || 'history';
-    navigate(hash);
-  });
-
-  const initialHash = window.location.hash.replace('#', '') || 'history';
-  navigate(initialHash);
+  // Handle direct hash on page load
+  if (window.location.hash) {
+    const initialTarget = document.getElementById(window.location.hash.replace('#', ''));
+    if (initialTarget) {
+      setTimeout(() => {
+        initialTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    }
+  }
 }
 
 /* ==========================================================================
-   INTERSECTION OBSERVER — SUBTLE SCROLL ENTRY
+   OBSERVADOR DE SECCIÓN ACTIVA EN SCROLL
    ========================================================================== */
 
-function initScrollAnimations() {
-  const elements = document.querySelectorAll('.animate-entry:not(.in-view)');
-  if (!elements.length) return;
+function initActiveSectionObserver() {
+  const sections = document.querySelectorAll('.page-section');
+  const navLinks = document.querySelectorAll('.nav-link');
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-        observer.unobserve(entry.target);
+        const id = entry.target.id;
+        navLinks.forEach(link => {
+          if (link.getAttribute('href') === `#${id}`) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
       }
     });
-  }, { threshold: 0.1 });
+  }, {
+    rootMargin: '-20% 0px -70% 0px'
+  });
 
-  elements.forEach(el => observer.observe(el));
+  sections.forEach(sec => observer.observe(sec));
 }
 
 /* ==========================================================================
@@ -188,7 +171,7 @@ function renderJugadores() {
   if (!container) return;
 
   container.innerHTML = JUGADORES_DATA.map(j => `
-    <div class="bento-card ${j.colSpan} ${j.isKing ? 'highlight' : ''} animate-entry">
+    <div class="bento-card ${j.colSpan} ${j.isKing ? 'highlight' : ''}">
       <div class="bento-header">
         <div class="bento-title-group">
           <h3>${j.nombre}</h3>
@@ -291,7 +274,7 @@ function renderClases() {
   if (!container) return;
 
   container.innerHTML = CLASES_DATA.map(c => `
-    <div class="bento-card bento-col-4 animate-entry">
+    <div class="bento-card bento-col-4">
       <div class="bento-header">
         <div class="bento-title-group">
           <h3>${c.nombre}</h3>
@@ -461,8 +444,13 @@ function renderJefes(filterTier = 'all') {
     ? JEFES_DATA 
     : JEFES_DATA.filter(j => j.tier.toString() === filterTier);
 
+  if (filtered.length === 0) {
+    container.innerHTML = `<div class="bento-card bento-col-12" style="text-align: center; color: var(--text-muted); padding: 2rem;">No hay jefes registrados para este Tier.</div>`;
+    return;
+  }
+
   container.innerHTML = filtered.map(j => `
-    <div class="bento-card bento-col-6 animate-entry">
+    <div class="bento-card bento-col-6">
       <div class="bento-header">
         <div class="bento-title-group">
           <h3>${j.nombre}</h3>
@@ -556,7 +544,7 @@ function renderMods(filterCat = 'all', searchQuery = '') {
 }
 
 /* ==========================================================================
-   BUSCADOR Y FILTROS
+   BUSCADOR Y FILTROS REACTIVOS
    ========================================================================== */
 
 function initSearchAndFilters() {

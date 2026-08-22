@@ -1,6 +1,6 @@
 /* ==========================================================================
    CENIZAS DEL CATACLISMO — WIKI & CRÓNICAS DE RAYCRESARK
-   Protocol: Premium Utilitarian Minimalism & Editorial UI
+   Protocol: Premium Utilitarian Minimalism & Editorial UI (Single Page)
    ========================================================================== */
 
 :root {
@@ -42,7 +42,7 @@
 
   /* Font Stacks */
   --font-serif: 'Newsreader', 'Playfair Display', 'Georgia', serif;
-  --font-sans: 'Geist Sans', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  --font-sans: 'Geist', 'Geist Sans', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
   --font-mono: 'Geist Mono', 'SF Mono', 'JetBrains Mono', monospace;
 
   /* Layout & Geometry */
@@ -66,6 +66,7 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  scroll-padding-top: 90px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -175,22 +176,22 @@ body {
 }
 
 /* ==========================================================================
-   NAVIGATION & HEADER
+   NAVIGATION & HEADER (STICKY)
    ========================================================================== */
 
 .header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-subtle);
 }
 
 .header-inner {
   max-width: 1140px;
   margin: 0 auto;
-  padding: 1rem 1.5rem;
+  padding: 0.85rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -292,7 +293,7 @@ body {
 }
 
 /* ==========================================================================
-   MAIN CONTAINER & EDITORIAL LAYOUT
+   MAIN CONTAINER & SINGLE PAGE SECTIONS
    ========================================================================== */
 
 .main-content {
@@ -300,27 +301,17 @@ body {
   max-width: 1140px;
   width: 100%;
   margin: 0 auto;
-  padding: 3.5rem 1.5rem 6rem;
+  padding: 2.5rem 1.5rem 6rem;
 }
 
 .page-section {
-  display: none;
-}
-
-.page-section.active {
   display: block;
+  margin-bottom: 5rem;
+  padding-top: 1.5rem;
 }
 
-/* Scroll Entry Animation */
-.animate-entry {
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 600ms var(--ease-editorial), transform 600ms var(--ease-editorial);
-}
-
-.animate-entry.in-view {
-  opacity: 1;
-  transform: translateY(0);
+.page-section:last-child {
+  margin-bottom: 0;
 }
 
 /* ==========================================================================
@@ -328,8 +319,8 @@ body {
    ========================================================================== */
 
 .section-header {
-  margin-bottom: 2.75rem;
-  padding-bottom: 1.5rem;
+  margin-bottom: 2.25rem;
+  padding-bottom: 1.25rem;
   border-bottom: 1px solid var(--border-subtle);
 }
 
@@ -343,7 +334,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--text-muted);
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
 }
 
 .section-title {
@@ -357,10 +348,10 @@ body {
 
 .section-desc {
   color: var(--text-secondary);
-  font-size: 1rem;
+  font-size: 0.98rem;
   line-height: 1.6;
-  margin-top: 0.75rem;
-  max-width: 720px;
+  margin-top: 0.65rem;
+  max-width: 760px;
 }
 
 /* ==========================================================================
@@ -387,6 +378,7 @@ body {
   display: flex;
   flex-direction: column;
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  opacity: 1;
 }
 
 .bento-card:hover {
@@ -922,7 +914,7 @@ tr:hover td {
 }
 
 /* ==========================================================================
-   RESPONSIVE (EDITORIAL MACRO-WHITESPACE)
+   RESPONSIVE
    ========================================================================== */
 
 @media (max-width: 900px) {
