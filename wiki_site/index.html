@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cenizas del Cataclismo — Wiki & Crónicas de Raycresark</title>
+  <title>Raycresark &bull; Cenizas del Cataclismo</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- ORACLE BANNER -->
+  <!-- TOP BAR / ORACLE NOTIFICATION -->
   <aside class="oracle-banner">
     <div class="oracle-inner">
-      <div class="oracle-title">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <div class="oracle-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>
         </svg>
         El Gran Oráculo
@@ -23,352 +23,339 @@
       <div class="oracle-text" id="oracle-status">
         "El tirano ha caído y la corona de Raycresark tiene dueño. Mas los titanes del abismo han despertado... La Mesa Redonda debe reunirse."
       </div>
-      <span class="oracle-badge">Oráculo Activo</span>
+      <span class="tag-pastel purple">Oráculo Activo</span>
     </div>
   </aside>
 
   <!-- HEADER & NAVIGATION -->
   <header class="header">
     <div class="header-inner">
-      <a href="#wiki" class="brand" data-target="wiki">
+      <a href="#history" class="brand" data-target="history">
         <div class="brand-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"/>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
           </svg>
         </div>
         <div class="brand-text">
           <h1>Raycresark</h1>
-          <span>Cenizas del Cataclismo — Forge 1.20.1</span>
+          <span>Cenizas del Cataclismo &bull; Forge 1.20.1</span>
         </div>
       </a>
 
       <nav class="nav">
-        <a href="#history" class="nav-link" data-target="history">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        <a href="#history" class="nav-link active" data-target="history">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
           Historia
         </a>
-        <a href="#wiki" class="nav-link active" data-target="wiki">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <a href="#wiki" class="nav-link" data-target="wiki">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
           Wiki
         </a>
         <a href="#mods" class="nav-link" data-target="mods">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
           Mods
         </a>
         <a href="#jugadores" class="nav-link" data-target="jugadores">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           Jugadores
         </a>
         <a href="#clases" class="nav-link" data-target="clases">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           Clases
         </a>
         <a href="#jefes" class="nav-link" data-target="jefes">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="12" r="1"/><circle cx="15" cy="12" r="1"/><path d="M8 20v2h8v-2"/><path d="m12.5 17-.5-1-.5 1h1z"/><path d="M16 20a3 3 0 0 0 1.5-2.6 6.5 6.5 0 1 0-11 0A3 3 0 0 0 8 20"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="12" r="1"/><circle cx="15" cy="12" r="1"/><path d="M8 20v2h8v-2"/><path d="m12.5 17-.5-1-.5 1h1z"/><path d="M16 20a3 3 0 0 0 1.5-2.6 6.5 6.5 0 1 0-11 0A3 3 0 0 0 8 20"/></svg>
           Jefes
         </a>
         <a href="#progresion" class="nav-link" data-target="progresion">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           Progresión
         </a>
       </nav>
     </div>
   </header>
 
-  <!-- MAIN CONTENT CONTAINER -->
+  <!-- MAIN CONTAINER -->
   <main class="main-content">
 
     <!-- ==========================================
          VIEW: HISTORIA / CRÓNICAS DEL ORÁCULO
          ========================================== -->
-    <section id="view-history" class="page-section">
-      <div class="section-header">
-        <div class="section-tag">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-          Los Anales de las Cenizas
+    <section id="view-history" class="page-section active">
+      <header class="section-header animate-entry">
+        <div class="section-eyebrow">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          Registro de la Corona
         </div>
         <h2 class="section-title">Crónicas de Raycresark</h2>
-        <p class="section-desc">Relato vivo de los acontecimientos, guerras y decretos del reino registrados fielmente por la pluma de El Gran Oráculo.</p>
-      </div>
+        <p class="section-desc">Documento histórico continuo sobre la caída del antiguo régimen, la toma del trono y la reconstitución de la orden bajo la mirada de El Gran Oráculo.</p>
+      </header>
 
       <!-- CAPÍTULO 1 -->
-      <article class="chronicle-chapter">
-        <div class="chronicle-meta">
-          <span class="chronicle-number">Capítulo I &bull; La Era del Aislamiento</span>
-          <span class="badge badge-muted">Antecedentes</span>
+      <article class="chronicle-entry animate-entry">
+        <div class="chronicle-header">
+          <span class="chronicle-label">Capítulo I &bull; Antecedentes</span>
+          <span class="tag-pastel gray">Era del Aislamiento</span>
         </div>
-        <h3 class="chronicle-title">La Fortaleza entre las Cenizas</h3>
-        <div class="chronicle-body">
+        <h3 class="chronicle-heading">La Fortaleza entre las Cenizas</h3>
+        <div class="chronicle-text">
           <p>
-            Cuando el Cataclismo desgarró el firmamento y las aberraciones mutantes comenzaron a emerger de las grietas del mundo, la gran fortaleza de <strong>Raycresark</strong> alzó sus murallas como el último refugio del valle. Sin embargo, aquel bastión que debió ser luz se tornó en prisión. Su antiguo monarca, enloquecido por el terror a los titanes exteriores, cerró los portones de hierro a cal y canto, dejando a los pueblos aledaños a merced de los saqueadores y las bestias de la noche.
+            Cuando el Cataclismo inicial fracturó el territorio y los primeros horrores mutantes surgieron de las profundidades, la fortaleza de <strong>Raycresark</strong> permaneció en pie como la posición fortificada dominante del valle. No obstante, el antiguo señor del reino sucumbió al aislamiento y la desconfianza: clausuró los accesos con verjas de hierro, abandonó a los asentamientos vecinos frente a las partidas de saqueadores y concentró los recursos del subsuelo para su propia guardia.
           </p>
           <p>
-            Bajo su tiranía, Raycresark se convirtió en un reino sombrío, gobernado por la opresión y el acaparamiento de los metales preciosos extraídos de las profundidades de la tierra.
+            Durante años, el castillo funcionó como una estructura opresiva, desconectada de la supervivencia colectiva y vulnerable a la creciente presión de los titanes exteriores.
           </p>
         </div>
         <div class="oracle-inscription">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/></svg>
-          <div class="oracle-inscription-text">
-            "Las piedras de Raycresark clamaban por un juicio. Porque no hay fortaleza lo bastante alta para esconderse de las sombras cuando el corazón del gobernante es de barro."
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/></svg>
+          <div class="oracle-inscription-quote">
+            "Las piedras de Raycresark requerían una resolución. Ninguna muralla preserva un reino cuando el mando se ejerce desde el miedo y el encierro."
           </div>
         </div>
       </article>
 
       <!-- CAPÍTULO 2 -->
-      <article class="chronicle-chapter">
-        <div class="chronicle-meta">
-          <span class="chronicle-number">Capítulo II &bull; El Asedio Solitario</span>
-          <span class="badge badge-gold">Hito Consumado</span>
+      <article class="chronicle-entry animate-entry">
+        <div class="chronicle-header">
+          <span class="chronicle-label">Capítulo II &bull; Transición del Trono</span>
+          <span class="tag-pastel yellow">Hito Consumado</span>
         </div>
-        <h3 class="chronicle-title">La Caída del Tirano y la Corona de Sangre</h3>
-        <div class="chronicle-body">
+        <h3 class="chronicle-heading">El Asalto Solitario y la Corona por Conquista</h3>
+        <div class="chronicle-text">
           <p>
-            En el día señalado por el destino, un guerrero solitario atravesó las líneas de defensa de Raycresark. Con acero forjado en la supervivencia y reflejos afilados en los páramos, irrumpió en la gran sala del trono.
+            Un único combatiente penetró las defensas perimetrales del bastión. Tras abrirse paso hasta la cámara del trono, desafió al regente en combate cerrado. La contienda concluyó con la muerte del antiguo monarca sobre el estrado principal.
           </p>
           <p>
-            Allí tuvo lugar el duelo singular: la espada del soberano déspota contra el avance imparable del retador. El combate concluyó con la muerte del viejo rey sobre los escalones de piedra. Reclamando la corona dorada y el título real por derecho absoluto de conquista, <strong>el nuevo Rey de Raycresark</strong> se sentó en el trono.
+            En ese instante, el vencedor asumió la corona y los títulos de <strong>Raycresark</strong> por derecho directo de conquista, iniciando la reorganización total de la plaza fuerte.
           </p>
         </div>
         <div class="oracle-inscription">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/></svg>
-          <div class="oracle-inscription-text">
-            "La sangre del tirano selló el pacto con la tierra. El reino ya no es una jaula; ahora es la forja donde se decidirá el destino del Cataclismo."
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/></svg>
+          <div class="oracle-inscription-quote">
+            "La caída del viejo regente reconfiguró el equilibrio del territorio. El castillo ha dejado de ser un refugio pasivo para transformarse en el centro de operaciones de la región."
           </div>
         </div>
       </article>
 
       <!-- CAPÍTULO 3 -->
-      <article class="chronicle-chapter">
-        <div class="chronicle-meta">
-          <span class="chronicle-number">Capítulo III &bull; La Nueva Era</span>
-          <span class="badge badge-crimson">Acontecimiento Presente</span>
+      <article class="chronicle-entry animate-entry">
+        <div class="chronicle-header">
+          <span class="chronicle-label">Capítulo III &bull; Estado Presente</span>
+          <span class="tag-pastel red">En Desarrollo</span>
         </div>
-        <h3 class="chronicle-title">El Encendido de la Waystone y los Cinco Campeones</h3>
-        <div class="chronicle-body">
+        <h3 class="chronicle-heading">Activación de la Waystone y la Mesa Redonda</h3>
+        <div class="chronicle-text">
           <p>
-            Consciente de que gobernar un reino en tiempos de catástrofe requiere más que una sola espada, el nuevo Rey activó la <em>Waystone Real</em> y envió mensajeros a través de los páramos para convocar a sus cinco aliados más leales.
+            Con el trono asegurado, el Rey activó la red de teletransporte local y emitió órdenes de movilización para convocar a cinco camaradas de armas:
           </p>
+          <div style="margin: 1.25rem 0; padding-left: 1rem; border-left: 2px solid var(--border-medium);">
+            <p><strong>Pedro:</strong> Designado <em>Gran Mariscal</em> para comandar la línea de choque frontal y la protección de los accesos principales.</p>
+            <p><strong>Cristhian:</strong> Designado <em>Maestro de Bestias y Explorador</em> para el reconocimiento territorial, mapeo y domesticación de fauna útil.</p>
+            <p><strong>Marcos:</strong> Designado <em>Gran Maestre Alquimista y Médico</em> para la formulación de insumos médicos y la reanimación táctica en campo.</p>
+            <p><strong>Alexandre:</strong> Designado <em>Alto Forjador</em> para la extracción sistemática en cotas profundas (Y = -58) y la manufactura de piezas de combate.</p>
+            <p><strong>César:</strong> Designado <em>Gran Cazador de Sombras</em> para incursiones en criptas subterráneas y eliminación de objetivos de alto impacto.</p>
+          </div>
           <p>
-            Así nace el decreto de la <strong>Mesa Redonda de Raycresark</strong>:
-          </p>
-          <ul class="card-list">
-            <li><strong>Pedro</strong> es nombrado <em>Gran Mariscal de la Guardia</em> para blindar las murallas y liderar la vanguardia de asedio.</li>
-            <li><strong>Cristhian</strong> recibe el título de <em>Maestro de Bestias y Explorador</em> para cartografiar los horizontes y domar las criaturas del cielo y la tierra.</li>
-            <li><strong>Marcos</strong> asume el cargo de <em>Gran Maestre Alquimista y Médico</em> para custodiar la salud y las almas de la orden.</li>
-            <li><strong>Alexandre</strong> es proclamado <em>Alto Forjador e Ingeniero</em> para arrancar los metales de las capas más oscuras (Y=-58) y forjar el arsenal del reino.</li>
-            <li><strong>César</strong> es investido como <em>Gran Cazador de Sombras</em> para purgar las criptas de no-muertos y clavar el filo crítico en los titanes.</li>
-          </ul>
-          <p>
-            El castillo aguarda la llegada de los caballeros. Los cofres de suministro han sido dispuestos, las forjas están calientes y el estandarte de Raycresark ondea con orgullo al viento.
+            Los aposentos, la armería y los almacenes han quedado dispuestos a la espera del ingreso formal de los cinco integrantes.
           </p>
         </div>
         <div class="oracle-inscription">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/></svg>
-          <div class="oracle-inscription-text">
-            "Las piezas del tablero están colocadas. Cuando los seis caminen juntos tras los muros de Raycresark, las campanas de la guerra tañerán en las profundidades."
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/></svg>
+          <div class="oracle-inscription-quote">
+            "La estructura de mando está trazada. En cuanto los seis miembros ocupen sus posiciones, dará inicio la fase de pacificación perimetral."
           </div>
         </div>
       </article>
-
     </section>
 
     <!-- ==========================================
          VIEW: WIKI / COMPENDIO GENERAL
          ========================================== -->
-    <section id="view-wiki" class="page-section active">
-      <div class="section-header">
-        <div class="section-tag">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-          Compendio Oficial
+    <section id="view-wiki" class="page-section">
+      <header class="section-header animate-entry">
+        <div class="section-eyebrow">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          Documentación de Campaña
         </div>
-        <h2 class="section-title">El Reino de Raycresark y el Cataclismo</h2>
-        <p class="section-desc">Guía fundamental sobre el mundo, el origen de la corona, mecánicas de supervivencia y directrices para la expedición de la Mesa Redonda.</p>
-      </div>
+        <h2 class="section-title">Compendio Técnico de Raycresark</h2>
+        <p class="section-desc">Manual de referencia operativa: protocolos de reanimación, navegación vertical, asignación de atajos de teclado y niveles de rendimiento minero.</p>
+      </header>
 
-      <!-- HERO LORE -->
-      <div class="hero-card">
-        <h3>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"/></svg>
-          La Conquista de Raycresark
-        </h3>
-        <p>
-          En los días oscuros posteriores a la Gran Fragmentación, la fortaleza de <strong>Raycresark</strong> se erigía como un bastión impenetrable bajo el yugo de un monarca despótico. Tras un asedio solitario y un duelo a muerte en la sala del trono, el antiguo señor fue derrotado. Reclamada la corona por derecho de conquista, el nuevo soberano ha encendido la <em>Waystone Real</em> para convocar a sus cinco campeones más leales y restaurar el orden en una tierra asolada por titanes y criaturas abisales.
-        </p>
-        <div class="hero-stats">
-          <div class="stat-box">
-            <div class="stat-label">Soberano Actual</div>
-            <div class="stat-value">El Rey Conquistador</div>
-          </div>
-          <div class="stat-box">
-            <div class="stat-label">Estado de la Corte</div>
-            <div class="stat-value">Convocatoria Activa (6 Asientos)</div>
-          </div>
-          <div class="stat-box">
-            <div class="stat-label">Bastión Central</div>
-            <div class="stat-value">Fortaleza de Raycresark</div>
-          </div>
-          <div class="stat-box">
-            <div class="stat-label">Fase del Mundo</div>
-            <div class="stat-value" style="color: var(--text-crimson);">Tier 0 — Tier 1 (Asegurar Fronteras)</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- MECÁNICAS DE SUPERVIVENCIA -->
-      <div class="section-header" style="margin-top: 3rem;">
-        <div class="section-tag">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          Reglas del Mundo
-        </div>
-        <h3 class="section-title" style="font-size: 1.5rem;">Sistemas y Mecánicas Vitales</h3>
-      </div>
-
-      <div class="grid-3">
-        <div class="card">
-          <div class="card-header">
-            <div class="card-title-group">
-              <h4>Reanimación de Aliados</h4>
-              <div class="card-subtitle">PlayerRevive System</div>
+      <!-- BENTO SUMMARY -->
+      <div class="bento-grid animate-entry">
+        <div class="bento-card bento-col-8 highlight">
+          <div class="bento-header">
+            <div class="bento-title-group">
+              <h3>Estado del Reino de Raycresark</h3>
+              <div class="bento-meta">Jurisdicción &bull; Bastión Central</div>
             </div>
-            <div class="card-icon crimson">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-            </div>
+            <span class="tag-pastel green">Operativo</span>
           </div>
-          <div class="card-body">
-            <p>Al caer en combate no mueres de inmediato. Entras en estado de <strong>desangrado durante 60 segundos</strong>.</p>
-            <p>Un compañero debe acercarse y <strong>mantener presionado Clic Derecho durante 5 segundos</strong> para salvarte la vida sin perder tu equipo ni tu inventario.</p>
+          <div class="bento-body">
+            <p>
+              El castillo de Raycresark funciona como centro neurálgico para el equipo de 6 jugadores. Cuenta con punto de anclaje de viaje rápido vía Waystone, forjas de fundición, barracas y almacén modular compartido.
+            </p>
+            <p>
+              La fase operativa actual corresponde a la <strong>consolidación perimetral (Tier 0 &ndash; Tier 1)</strong>: abastecimiento de hierro y cuero, adquisición de planeadores y neutralización de patrullas de saqueadores.
+            </p>
+          </div>
+          <div class="metrics-row">
+            <div class="metric-item">
+              <span class="metric-label">Comandante</span>
+              <span class="metric-value">El Rey Conquistador</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-label">Capacidad de Corte</span>
+              <span class="metric-value">6 Plazas Asignadas</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-label">Nivel de Alerta</span>
+              <span class="metric-value" style="color: var(--pastel-red-text);">Tier 1 (Local)</span>
+            </div>
           </div>
         </div>
 
-        <div class="card">
-          <div class="card-header">
-            <div class="card-title-group">
-              <h4>Estamina & Paraglider</h4>
-              <div class="card-subtitle">Movilidad Vertical</div>
+        <div class="bento-card bento-col-4">
+          <div class="bento-header">
+            <div class="bento-title-group">
+              <h4>Reanimación Táctica</h4>
+              <div class="bento-meta">PlayerRevive</div>
             </div>
-            <div class="card-icon cyan">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <div class="bento-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
             </div>
           </div>
-          <div class="card-body">
-            <p>El vuelo en Paraglider consume estamina en tiempo real. Mantén <strong>Espacio</strong> en el aire para desplegarlo.</p>
-            <p>Encuentra estatuas en aldeas para canjear orbes sagrados por <strong>Stamina Vessels</strong> (+resistencia) o contenedores de corazones.</p>
+          <div class="bento-body">
+            <p>Al agotarse la salud en combate, el jugador entra en estado de desangrado durante <strong>60 segundos</strong>.</p>
+            <p>Cualquier compañero puede reanimarlo manteniendo pulsado <kbd>Clic Derecho</kbd> durante 5 segundos continuos.</p>
           </div>
         </div>
 
-        <div class="card">
-          <div class="card-header">
-            <div class="card-title-group">
-              <h4>Logística de Mochilas</h4>
-              <div class="card-subtitle">Sophisticated Backpacks</div>
+        <div class="bento-card bento-col-6">
+          <div class="bento-header">
+            <div class="bento-title-group">
+              <h4>Planeador y Estamina</h4>
+              <div class="bento-meta">Paraglider Mod</div>
             </div>
-            <div class="card-icon purple">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            <div class="bento-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             </div>
           </div>
-          <div class="card-body">
-            <p>Tu mochila (tecla <strong>B</strong>) es tu taller móvil. Instala mejoras esenciales como <em>Auto-Smelt</em>, <em>Magnet</em> (imán de drops) y <em>Compacting</em> para comprimir minerales.</p>
+          <div class="bento-body">
+            <p>Mantener <kbd>Espacio</kbd> en el aire para desplegar el planeador. El vuelo drena la barra de resistencia.</p>
+            <p>Localizar estatuas en aldeas para canjear recipientes espirituales por <strong>Stamina Vessels</strong> adicionales.</p>
+          </div>
+        </div>
+
+        <div class="bento-card bento-col-6">
+          <div class="bento-header">
+            <div class="bento-title-group">
+              <h4>Mochilas Modulares</h4>
+              <div class="bento-meta">Sophisticated Backpacks</div>
+            </div>
+            <div class="bento-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            </div>
+          </div>
+          <div class="bento-body">
+            <p>Abrir inventario de mochila con la tecla <kbd>B</kbd>. Admite mejoras funcionales de imán, fundición automática y compresión de minerales en bloque.</p>
           </div>
         </div>
       </div>
 
-      <!-- TABLA DE CONTROLES -->
-      <div class="section-header" style="margin-top: 3rem;">
-        <div class="section-tag">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3ZM6 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3Z"/></svg>
-          Configuración
+      <!-- CONTROLES -->
+      <div class="window-chrome animate-entry">
+        <div class="window-chrome-bar">
+          <span class="window-dot"></span>
+          <span class="window-dot"></span>
+          <span class="window-dot"></span>
+          <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); margin-left: 0.5rem;">configuracion_controles.tab</span>
         </div>
-        <h3 class="section-title" style="font-size: 1.5rem;">Controles y Atajos Recomendados</h3>
-      </div>
-
-      <div class="table-wrapper">
         <table>
           <thead>
             <tr>
-              <th>Tecla</th>
-              <th>Acción en Combate / Aventura</th>
-              <th>Mod de Origen</th>
-              <th>Uso Táctico</th>
+              <th style="width: 20%;">Asignación</th>
+              <th style="width: 30%;">Función Operativa</th>
+              <th style="width: 25%;">Módulo</th>
+              <th>Propósito Táctico</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><span class="badge badge-gold">B</span></td>
-              <td>Abrir Mochila</td>
+              <td><kbd>B</kbd></td>
+              <td>Acceso a Mochila</td>
               <td>Sophisticated Backpacks</td>
-              <td>Acceso rápido sin colocar el inventario en el suelo.</td>
+              <td>Gestión de suministros en marcha.</td>
             </tr>
             <tr>
-              <td><span class="badge badge-crimson">R</span></td>
-              <td>Rodada Evasiva / I-Frames</td>
+              <td><kbd>R</kbd></td>
+              <td>Rodada Evasiva</td>
               <td>Better Combat</td>
-              <td>Esquive con invulnerabilidad temporal contra jefes.</td>
+              <td>Cuadros de invulnerabilidad (I-frames) contra jefes.</td>
             </tr>
             <tr>
-              <td><span class="badge badge-cyan">M</span></td>
-              <td>Abrir Mapa Mundial</td>
+              <td><kbd>M</kbd></td>
+              <td>Mapa de Territorio</td>
               <td>Xaero's WorldMap</td>
-              <td>Rastreo de fortalezas, mazmorras y waypoints de la corona.</td>
+              <td>Visualización de waypoints, cotas y fortalezas.</td>
             </tr>
             <tr>
-              <td><span class="badge badge-purple">K</span></td>
-              <td>Registro de Jefes</td>
+              <td><kbd>K</kbd></td>
+              <td>Registro de Titanes</td>
               <td>Boss Checklist</td>
-              <td>Consulta qué titanes han sido derrotados en el mundo.</td>
+              <td>Verificación de jefes derrotados en la sesión.</td>
             </tr>
             <tr>
-              <td><span class="badge badge-emerald">Clic Derecho (5s)</span></td>
+              <td><kbd>Clic Derecho (5s)</kbd></td>
               <td>Reanimar Compañero</td>
               <td>PlayerRevive</td>
-              <td>Salvar a un aliado caído en estado de desangrado.</td>
+              <td>Recuperación de aliados caídos en combate.</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <!-- TABLA DE MINERÍA -->
-      <div class="section-header" style="margin-top: 3rem;">
-        <div class="section-tag">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 12-8.5 8.5c-.8.8-2.2.8-3 0 0 0 0 0 0 0-.8-.8-.8-2.2 0-3L12 9"/></svg>
-          Extracción
+      <!-- MINERÍA -->
+      <div class="window-chrome animate-entry">
+        <div class="window-chrome-bar">
+          <span class="window-dot"></span>
+          <span class="window-dot"></span>
+          <span class="window-dot"></span>
+          <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); margin-left: 0.5rem;">cotas_extraccion_mineral.tab</span>
         </div>
-        <h3 class="section-title" style="font-size: 1.5rem;">Capas Óptimas de Minería (1.20.1)</h3>
-      </div>
-
-      <div class="table-wrapper">
         <table>
           <thead>
             <tr>
-              <th>Mineral / Recurso</th>
-              <th>Capa Óptima (Y)</th>
-              <th>Rango Total</th>
-              <th>Ubicación y Notas</th>
+              <th style="width: 25%;">Material</th>
+              <th style="width: 25%;">Cota Óptima (Y)</th>
+              <th style="width: 20%;">Rango Total</th>
+              <th>Notas de Yacimiento</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td style="font-weight:700; color: var(--text-cyan);">Diamante</td>
-              <td><strong>Y = -58 a -53</strong></td>
+              <td style="font-weight: 600;">Diamante</td>
+              <td><kbd>Y = -58 a -53</kbd></td>
               <td>Y: -64 a 16</td>
-              <td>Punto dulce en Y = -58 justo encima de la Bedrock.</td>
+              <td>Mayor concentración en Y = -58, directamente sobre lecho de roca.</td>
             </tr>
             <tr>
-              <td style="font-weight:700; color: var(--text-crimson);">Escombros Antiguos (Netherite)</td>
-              <td><strong>Y = 15</strong></td>
+              <td style="font-weight: 600;">Escombros Antiguos (Netherite)</td>
+              <td><kbd>Y = 15</kbd></td>
               <td>Y: 8 a 119</td>
-              <td>En el Nether; usar camas o anclas para minado explosivo.</td>
+              <td>Dimensión del Nether; extracción eficiente con explosión controlada.</td>
             </tr>
             <tr>
-              <td style="font-weight:700; color: var(--text-gold-dark);">Hierro</td>
-              <td><strong>Y = 16 y Y = 232</strong></td>
+              <td style="font-weight: 600;">Hierro</td>
+              <td><kbd>Y = 16 y Y = 232</kbd></td>
               <td>Y: -64 a 320</td>
-              <td>Picos montañosos altos o en cavernas a nivel 16.</td>
+              <td>Formaciones montañosas altas o cavernas estándar a nivel 16.</td>
             </tr>
             <tr>
-              <td style="font-weight:700; color: var(--text-purple);">Aquamarine & Minerales Abisales</td>
-              <td><strong>Y = -32 a -50</strong></td>
+              <td style="font-weight: 600;">Aquamarine & Minerales Abisales</td>
+              <td><kbd>Y = -32 a -50</kbd></td>
               <td>Y: -64 a 0</td>
-              <td>Cuevas sumergidas en biomas de océano congelado (Aquamirae).</td>
+              <td>Subsuelo sumergido en biomas de océano glacial (Aquamirae).</td>
             </tr>
           </tbody>
         </table>
@@ -379,38 +366,37 @@
          VIEW: MODS / DIRECTORIO
          ========================================== -->
     <section id="view-mods" class="page-section">
-      <div class="section-header">
-        <div class="section-tag">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-          Directorio de Modificaciones
+      <header class="section-header animate-entry">
+        <div class="section-eyebrow">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          Directorio del Modpack
         </div>
-        <h2 class="section-title">Mods de Cenizas del Cataclismo</h2>
-        <p class="section-desc">Catálogo de componentes técnicos, sistemas de combate, estructuras y módulos de jugabilidad activos en el servidor.</p>
+        <h2 class="section-title">Componentes y Módulos Activos</h2>
+        <p class="section-desc">Registro sistemático de librerías, estructuras, extensiones de combate y utilidades instaladas en el servidor Forge 1.20.1.</p>
+      </header>
+
+      <!-- CONTROL BAR -->
+      <div class="control-bar animate-entry">
+        <div class="search-field">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="text" id="mod-search-input" placeholder="Filtrar por nombre o descripción...">
+        </div>
+        <div class="filter-pills">
+          <button class="pill-btn mod-filter-btn active" data-cat="all">Todos</button>
+          <button class="pill-btn mod-filter-btn" data-cat="jefes">Jefes & Mazmorras</button>
+          <button class="pill-btn mod-filter-btn" data-cat="combate">Combate</button>
+          <button class="pill-btn mod-filter-btn" data-cat="mundo">Mundo</button>
+          <button class="pill-btn mod-filter-btn" data-cat="utilidad">Utilidad</button>
+        </div>
       </div>
 
-      <!-- FILTROS Y BÚSQUEDA -->
-      <div class="filter-bar">
-        <div class="search-box">
-          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-          <input type="text" id="mod-search-input" placeholder="Buscar mod por nombre o descripción...">
-        </div>
-        <div class="filter-btn-group">
-          <button class="filter-btn mod-filter-btn active" data-cat="all">Todos</button>
-          <button class="filter-btn mod-filter-btn" data-cat="jefes">Jefes & Mazmorras</button>
-          <button class="filter-btn mod-filter-btn" data-cat="combate">Combate & Armas</button>
-          <button class="filter-btn mod-filter-btn" data-cat="mundo">Mundo & Estructuras</button>
-          <button class="filter-btn mod-filter-btn" data-cat="utilidad">Utilidad & Supervivencia</button>
-        </div>
-      </div>
-
-      <!-- TABLA DE MODS -->
-      <div class="table-wrapper">
+      <div class="table-frame animate-entry">
         <table>
           <thead>
             <tr>
-              <th style="width: 25%;">Nombre del Mod</th>
-              <th style="width: 20%;">Categoría</th>
-              <th>Propósito e Impacto en el Juego</th>
+              <th style="width: 25%;">Identificador</th>
+              <th style="width: 18%;">Categoría</th>
+              <th>Descripción Funcional</th>
             </tr>
           </thead>
           <tbody id="mods-table-body">
@@ -424,16 +410,16 @@
          VIEW: JUGADORES / MESA REDONDA
          ========================================== -->
     <section id="view-jugadores" class="page-section">
-      <div class="section-header">
-        <div class="section-tag">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          La Corte de Raycresark
+      <header class="section-header animate-entry">
+        <div class="section-eyebrow">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          Corte y Estructura de Mando
         </div>
-        <h2 class="section-title">Los Seis Asientos de la Mesa Redonda</h2>
-        <p class="section-desc">Fichas nobiliarias y tácticas de los gobernantes y campeones de la corona. Cada miembro cumple un rol vital en el combate y la gestión del reino.</p>
-      </div>
+        <h2 class="section-title">La Mesa Redonda de Raycresark</h2>
+        <p class="section-desc">Fichas de asignación técnica para los seis integrantes de la orden. Cada posición cuenta con armamento designado, responsabilidades de base y rol táctico.</p>
+      </header>
 
-      <div class="grid-2" id="jugadores-grid">
+      <div class="bento-grid" id="jugadores-grid">
         <!-- Rendered by app.js -->
       </div>
     </section>
@@ -442,16 +428,16 @@
          VIEW: CLASES / MANUAL INICIAL
          ========================================== -->
     <section id="view-clases" class="page-section">
-      <div class="section-header">
-        <div class="section-tag">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          Manual de Iniciación
+      <header class="section-header animate-entry">
+        <div class="section-eyebrow">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Manual de Especialización
         </div>
-        <h2 class="section-title">Arquetipos y Especializaciones</h2>
-        <p class="section-desc">Manual de clases oficiales para elegir al inicio de la aventura. Cada arquetipo define atributos iniciales, estilo de combate y compatibilidad con armaduras.</p>
-      </div>
+        <h2 class="section-title">Arquetipos Iniciales de Selección</h2>
+        <p class="section-desc">Especificación de los seis perfiles de combate disponibles para el despliegue en grupo, con balance métrico de vitalidad, ataque, agilidad y apoyo.</p>
+      </header>
 
-      <div class="grid-3" id="clases-grid">
+      <div class="bento-grid" id="clases-grid">
         <!-- Rendered by app.js -->
       </div>
     </section>
@@ -460,30 +446,29 @@
          VIEW: JEFES / BESTIARIO
          ========================================== -->
     <section id="view-jefes" class="page-section">
-      <div class="section-header">
-        <div class="section-tag">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="12" r="1"/><circle cx="15" cy="12" r="1"/><path d="M8 20v2h8v-2"/><path d="m12.5 17-.5-1-.5 1h1z"/><path d="M16 20a3 3 0 0 0 1.5-2.6 6.5 6.5 0 1 0-11 0A3 3 0 0 0 8 20"/></svg>
+      <header class="section-header animate-entry">
+        <div class="section-eyebrow">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="12" r="1"/><circle cx="15" cy="12" r="1"/><path d="M8 20v2h8v-2"/><path d="m12.5 17-.5-1-.5 1h1z"/><path d="M16 20a3 3 0 0 0 1.5-2.6 6.5 6.5 0 1 0-11 0A3 3 0 0 0 8 20"/></svg>
           Bestiario de Titanes
         </div>
-        <h2 class="section-title">Jefes y Encuentros Legendarios</h2>
-        <p class="section-desc">Estrategias de asalto, puntos débiles, patrones de ataque y recompensas míticas clasificadas por nivel de poder (Tiers 0 a 5).</p>
-      </div>
+        <h2 class="section-title">Jefes y Encuentros por Fases</h2>
+        <p class="section-desc">Protocolos de combate para los encuentros mayores del modpack, clasificados por Tiers de equipamiento del 0 al 5.</p>
+      </header>
 
-      <!-- FILTRO DE TIERS -->
-      <div class="filter-bar">
-        <span style="font-size: 0.82rem; font-weight: 700; color: var(--text-gold); text-transform: uppercase; letter-spacing: 0.08em;">Filtrar por Tier:</span>
-        <div class="filter-btn-group">
-          <button class="filter-btn boss-filter-btn active" data-tier="all">Todos los Tiers</button>
-          <button class="filter-btn boss-filter-btn" data-tier="0">Tier 0 (Inicio)</button>
-          <button class="filter-btn boss-filter-btn" data-tier="1">Tier 1 (Mazmorras)</button>
-          <button class="filter-btn boss-filter-btn" data-tier="2">Tier 2 (Océano Helado)</button>
-          <button class="filter-btn boss-filter-btn" data-tier="3">Tier 3 (Nether Volcánico)</button>
-          <button class="filter-btn boss-filter-btn" data-tier="4">Tier 4 (El Vacío & Fábrica)</button>
-          <button class="filter-btn boss-filter-btn" data-tier="5">Tier 5 (Titanes Finales)</button>
+      <div class="control-bar animate-entry">
+        <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Filtrar Fase:</span>
+        <div class="filter-pills">
+          <button class="pill-btn boss-filter-btn active" data-tier="all">Todos</button>
+          <button class="pill-btn boss-filter-btn" data-tier="0">Tier 0</button>
+          <button class="pill-btn boss-filter-btn" data-tier="1">Tier 1</button>
+          <button class="pill-btn boss-filter-btn" data-tier="2">Tier 2</button>
+          <button class="pill-btn boss-filter-btn" data-tier="3">Tier 3</button>
+          <button class="pill-btn boss-filter-btn" data-tier="4">Tier 4</button>
+          <button class="pill-btn boss-filter-btn" data-tier="5">Tier 5</button>
         </div>
       </div>
 
-      <div class="grid-2" id="jefes-grid">
+      <div class="bento-grid" id="jefes-grid">
         <!-- Rendered by app.js -->
       </div>
     </section>
@@ -492,115 +477,109 @@
          VIEW: PROGRESIÓN / LÍNEA DE TIEMPO
          ========================================== -->
     <section id="view-progresion" class="page-section">
-      <div class="section-header">
-        <div class="section-tag">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          Registro de la Era
+      <header class="section-header animate-entry">
+        <div class="section-eyebrow">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Cronología Operativa
         </div>
-        <h2 class="section-title">Línea de Tiempo de Raycresark</h2>
-        <p class="section-desc">Las fases de progresión y acontecimientos clave dictados por El Gran Oráculo. Este registro se actualiza conforme la Mesa Redonda cumple nuevas hazañas en el mundo.</p>
-      </div>
+        <h2 class="section-title">Línea de Progresión Territorial</h2>
+        <p class="section-desc">Estado de avance de las fases de campaña dictadas por El Gran Oráculo, desde la conquista inicial hasta los objetivos dimensionales del End.</p>
+      </header>
 
-      <div class="timeline">
+      <div class="timeline-editorial animate-entry">
 
         <!-- NODO 0: CONQUISTA (COMPLETADO) -->
-        <div class="timeline-node completed">
-          <div class="timeline-dot">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-          </div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <div class="timeline-phase">Fase 0: La Caída del Tirano & Coronación</div>
-              <div class="timeline-date">Acontecimiento Consumado</div>
+        <div class="timeline-item completed">
+          <div class="timeline-marker"></div>
+          <div class="timeline-box">
+            <div class="timeline-box-header">
+              <div class="timeline-box-title">Fase 0: Toma de Raycresark & Muerte del Tirano</div>
+              <span class="tag-pastel green">Consumado</span>
             </div>
-            <p>
-              El héroe solitario penetra las defensas del castillo de <strong>Raycresark</strong>, abate al viejo rey en combate singular y reclama la corona del reino. La bandera real vuelve a ondear sobre la fortaleza central.
+            <p style="font-size: 0.92rem; color: var(--text-body);">
+              Incursión en solitario sobre el bastión principal. Eliminación del antiguo mandatario en combate singular y asunción del título de Rey de Raycresark.
             </p>
-            <div class="oracle-quote">
-              "El trono tiene sangre nueva. Un conquistador se sienta sobre las piedras de Raycresark, pero el eco de su espada ha resonado en las profundidades del mundo..."
+            <div class="oracle-inscription" style="margin-top: 1rem; padding: 0.85rem 1rem;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/></svg>
+              <div class="oracle-inscription-quote">
+                "La fortaleza ha cambiado de regente. Las bases del reino han sido refundadas para afrontar los desafíos del Cataclismo."
+              </div>
             </div>
           </div>
         </div>
 
         <!-- NODO 1: CONVOCATORIA (ACTIVO) -->
-        <div class="timeline-node active">
-          <div class="timeline-dot">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <div class="timeline-phase" style="color: var(--text-crimson);">Fase 1: El Llamado de los Cinco Campeones</div>
-              <div class="timeline-date"><span class="badge badge-crimson">Acontecimiento en Curso</span></div>
+        <div class="timeline-item active">
+          <div class="timeline-marker"></div>
+          <div class="timeline-box">
+            <div class="timeline-box-header">
+              <div class="timeline-box-title">Fase 1: Convocatoria de la Mesa Redonda & Tier 1</div>
+              <span class="tag-pastel red">En Curso</span>
             </div>
-            <p>
-              El Rey emite el decreto real para convocar a <strong>Pedro, Cristhian, Marcos, Alexandre y César</strong> a la sala de la Mesa Redonda. Se preparan los aposentos, la forja y los suministros de inicio para asegurar el perímetro del reino contra saqueadores y bestias nocturnas.
+            <p style="font-size: 0.92rem; color: var(--text-body);">
+              Llamamiento formal a Pedro, Cristhian, Marcos, Alexandre y César. Establecimiento de la base de operaciones, aprovisionamiento inicial y neutralización de amenazas terrestres (Mutant Monsters, Ferrous Wroughtnaut).
             </p>
-            <div class="oracle-quote">
-              "Cinco almas acudirán a la llamada de la corona. Si logran forjar el acero y domar los cielos, las sombras de la frontera retrocederán."
+            <div class="oracle-inscription" style="margin-top: 1rem; padding: 0.85rem 1rem;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/></svg>
+              <div class="oracle-inscription-quote">
+                "La cohesión del equipo en las primeras expediciones determinará la estabilidad de las fronteras de Raycresark."
+              </div>
             </div>
           </div>
         </div>
 
         <!-- NODO 2: EXPEDICIÓN GLACIAL (FUTURO) -->
-        <div class="timeline-node">
-          <div class="timeline-dot">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
-          </div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <div class="timeline-phase">Fase 2: La Expedición al Océano Helado (Tier 2)</div>
-              <div class="timeline-date"><span class="badge badge-muted">Profecía Sellada</span></div>
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-box">
+            <div class="timeline-box-header">
+              <div class="timeline-box-title">Fase 2: Expedición Naval al Océano Glacial (Tier 2)</div>
+              <span class="tag-pastel gray">Pendiente</span>
             </div>
-            <p>
-              El reino de Raycresark sentirá el frío glacial del abismo marino. La orden construirá una flota para marchar hacia los hielos eternos y desafiar al buque espectral de la <strong>Capitana Cornelia</strong> (*Aquamirae*).
+            <p style="font-size: 0.92rem; color: var(--text-secondary);">
+              Despliegue hacia las aguas boreales congeladas para abordar el buque fantasma de la Capitana Cornelia (Aquamirae) y asegurar aleaciones de teratoma.
             </p>
           </div>
         </div>
 
         <!-- NODO 3: CRUZADA DEL NETHER (FUTURO) -->
-        <div class="timeline-node">
-          <div class="timeline-dot">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
-          </div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <div class="timeline-phase">Fase 3: La Cruzada del Fuego Volcánico (Tier 3)</div>
-              <div class="timeline-date"><span class="badge badge-muted">Profecía Sellada</span></div>
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-box">
+            <div class="timeline-box-header">
+              <div class="timeline-box-title">Fase 3: Campaña Volcánica del Nether (Tier 3)</div>
+              <span class="tag-pastel gray">Pendiente</span>
             </div>
-            <p>
-              Apertura del portal hacia el infierno renacido de <em>Incendium</em>. Asalto a la <em>Monstrous Forge</em> para extraer el Netherite puro de la <strong>Netherite Monstrosity</strong> y duelo con <strong>Ignis</strong> en la arena de fuego.
+            <p style="font-size: 0.92rem; color: var(--text-secondary);">
+              Incursión en los biomas de Incendium. Asalto a la Forja Monstruosa para extraer lingotes de Netherite puro y neutralización de Ignis en la arena ígnea.
             </p>
           </div>
         </div>
 
         <!-- NODO 4: EL VACÍO Y LA FÁBRICA (FUTURO) -->
-        <div class="timeline-node">
-          <div class="timeline-dot">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
-          </div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <div class="timeline-phase">Fase 4: La Fábrica Prohibida y el Gusano del Vacío (Tier 4)</div>
-              <div class="timeline-date"><span class="badge badge-muted">Profecía Sellada</span></div>
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-box">
+            <div class="timeline-box-header">
+              <div class="timeline-box-title">Fase 4: Fábrica Mecánica & Caza del Void Worm (Tier 4)</div>
+              <span class="tag-pastel gray">Pendiente</span>
             </div>
-            <p>
-              Incursión en la fábrica subterránea para desactivar al <strong>Harbinger</strong> y viaje al Fin para dar caza al colosal <strong>Void Worm</strong> entre las estrellas del vacío.
+            <p style="font-size: 0.92rem; color: var(--text-secondary);">
+              Desactivación del Harbinger en las cotas de lecho de roca y apertura del vórtice del End para cazar al Void Worm entre las islas flotantes.
             </p>
           </div>
         </div>
 
         <!-- NODO 5: EL JUICIO FINAL (FUTURO) -->
-        <div class="timeline-node">
-          <div class="timeline-dot">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
-          </div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <div class="timeline-phase">Fase 5: El Juicio del Leviatán (Tier 5)</div>
-              <div class="timeline-date"><span class="badge badge-muted">Profecía Final</span></div>
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-box">
+            <div class="timeline-box-header">
+              <div class="timeline-box-title">Fase 5: El Enfrentamiento en la Ciudad Sumergida (Tier 5)</div>
+              <span class="tag-pastel gray">Objetivo Final</span>
             </div>
-            <p>
-              El enfrentamiento definitivo en la Ciudad Sumergida del End contra <strong>The Leviathan</strong>, donde se decidirá el destino final de Raycresark y de todas las cenizas del cataclismo.
+            <p style="font-size: 0.92rem; color: var(--text-secondary);">
+              Asalto conjunto a la Fosa Abisal del Fin para derrotar a The Leviathan y asegurar el dominio absoluto sobre el territorio.
             </p>
           </div>
         </div>
@@ -613,6 +592,9 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-inner">
+      <div class="footer-brand">
+        Raycresark &bull; Cenizas del Cataclismo
+      </div>
       <div class="footer-links">
         <a href="#history" data-target="history">Historia</a>
         <a href="#wiki" data-target="wiki">Wiki</a>
@@ -622,12 +604,6 @@
         <a href="#jefes" data-target="jefes">Jefes</a>
         <a href="#progresion" data-target="progresion">Progresión</a>
       </div>
-      <p style="color: var(--text-gold-dark); font-family: var(--font-serif); font-size: 0.9rem; font-weight: 700;">
-        Las Crónicas de Raycresark — Registradas por El Gran Oráculo de las Cenizas
-      </p>
-      <p style="font-size: 0.76rem; color: var(--text-muted);">
-        Minecraft Forge 1.20.1 &bull; Modpack Oficial Cenizas del Cataclismo &bull; Cero Emojis &bull; Vector Graphics Edition
-      </p>
     </div>
   </footer>
 

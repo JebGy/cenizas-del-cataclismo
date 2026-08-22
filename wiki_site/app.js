@@ -1,6 +1,6 @@
 /**
  * CENIZAS DEL CATACLISMO — WIKI & CRÓNICAS DE RAYCRESARK
- * Motor de la aplicación SPA, Datos y Enrutador
+ * Protocol: Premium Utilitarian Minimalism & Editorial UI
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderJefes();
   renderMods();
   initSearchAndFilters();
+  initScrollAnimations();
 });
 
 /* ==========================================================================
@@ -22,7 +23,7 @@ function initRouter() {
 
   function navigate(targetId) {
     const validTargets = ['history', 'wiki', 'mods', 'jugadores', 'clases', 'jefes', 'progresion'];
-    const activeTarget = validTargets.includes(targetId) ? targetId : 'wiki';
+    const activeTarget = validTargets.includes(targetId) ? targetId : 'history';
 
     // Update active nav links
     navLinks.forEach(link => {
@@ -43,7 +44,11 @@ function initRouter() {
       }
     });
 
-    // Scroll to top
+    // Trigger scroll entry animation for the newly visible section
+    setTimeout(() => {
+      initScrollAnimations();
+    }, 50);
+
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
@@ -59,12 +64,32 @@ function initRouter() {
 
   // Handle hash change & initial load
   window.addEventListener('hashchange', () => {
-    const hash = window.location.hash.replace('#', '') || 'wiki';
+    const hash = window.location.hash.replace('#', '') || 'history';
     navigate(hash);
   });
 
-  const initialHash = window.location.hash.replace('#', '') || 'wiki';
+  const initialHash = window.location.hash.replace('#', '') || 'history';
   navigate(initialHash);
+}
+
+/* ==========================================================================
+   INTERSECTION OBSERVER — SUBTLE SCROLL ENTRY
+   ========================================================================== */
+
+function initScrollAnimations() {
+  const elements = document.querySelectorAll('.animate-entry:not(.in-view)');
+  if (!elements.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  elements.forEach(el => observer.observe(el));
 }
 
 /* ==========================================================================
@@ -75,80 +100,86 @@ const JUGADORES_DATA = [
   {
     nombre: "Tú (El Conquistador)",
     titulo: "Rey de Raycresark & Campeón del Trono",
-    arquetipo: "Líder Supremo / Estratega de Guerra",
-    iconoColor: "gold",
+    arquetipo: "Mando Supremo & Estratega",
+    tagColor: "yellow",
     isKing: true,
     estado: "En el Trono",
-    arma: "Espada Real del Conquistador & Escudo Blasón",
-    armadura: "Armadura Real de Caballero de Raycresark",
-    deber: "Gobernanza del reino, diplomacia bélica, asignación de misiones y mando supremo en asedios.",
-    habilidad: "Decreto Real (Coordinación y bonificación de moral en combate)",
-    bio: "El guerrero que penetró las defensas de Raycresark, abatió al antiguo tirano en combate singular y encendió el faro de la Mesa Redonda para convocar a sus camaradas."
+    arma: "Espada Larga Real & Escudo Blasón",
+    armadura: "Set Completo de Caballero de Raycresark",
+    deber: "Gobernanza central, asignación de misiones y mando supremo en asedios mayores.",
+    habilidad: "Decreto Real (Coordinación táctica de grupo)",
+    bio: "Combatiente que derrotó al viejo regente en combate singular y asumió la corona por derecho directo de conquista.",
+    colSpan: "bento-col-12"
   },
   {
     nombre: "Pedro",
     titulo: "Gran Mariscal de la Guardia Real",
-    arquetipo: "Vanguardia Pesada / Tanque de Asedio",
-    iconoColor: "crimson",
+    arquetipo: "Vanguardia Pesada / Tanque",
+    tagColor: "red",
     isKing: false,
     estado: "Convocado",
-    arma: "Hacha de Guerra & Escudo de Torre Reforzado",
-    armadura: "Set Samurai / Placas de Acero (Armor of the Ages)",
-    deber: "Custodia de las puertas y murallas, atracción del agro de titanes y liderazgo de la vanguardia.",
-    habilidad: "Muralla Inquebrantable (Reducción de daño y bloqueo frontal)",
-    bio: "Guardián legendario de temple férreo. Capaz de sostener la embestida de criaturas mutantes y abrir paso entre las líneas enemigas con golpes de escudo."
+    arma: "Hacha de Guerra & Escudo de Torre",
+    armadura: "Placas Reforzadas (Armor of the Ages)",
+    deber: "Custodia de los accesos principales y fijación del agro de jefes.",
+    habilidad: "Muralla Inquebrantable (Bloqueo frontal pesado)",
+    bio: "Especialista en absorción de daño y ruptura de formaciones enemigas.",
+    colSpan: "bento-col-6"
   },
   {
     nombre: "Cristhian",
-    titulo: "Maestro de Bestias y Explorador Real",
-    arquetipo: "Ranger / Cartógrafo / Domador",
-    iconoColor: "emerald",
+    titulo: "Maestro de Bestias y Explorador",
+    arquetipo: "Ranger / Cartógrafo",
+    tagColor: "green",
     isKing: false,
     estado: "Convocado",
-    arma: "Arco Recurvo Largo & Daga Silenciosa",
-    armadura: "Cuero Reforzado Ligero con Paraglider",
-    deber: "Cartografía de biomas lejanos (Xaero's Map), doma de monturas y bestias de Alex's Mobs.",
-    habilidad: "Ojo de Halcón (Disparo crítico a distancia y reconocimiento aéreo)",
-    bio: "Rastreador incansable de los páramos. Sus flechas alcanzan objetivos antes de que se percaten de su presencia y su afinidad con la fauna salvaje provee de monturas al reino."
+    arma: "Arco Largo Recurvo & Daga Táctica",
+    armadura: "Cuero Reforzado & Paraglider",
+    deber: "Mapeo territorial (Xaero's Map) y doma de monturas (Alex's Mobs).",
+    habilidad: "Ojo de Halcón (Reconocimiento aéreo y daño a distancia)",
+    bio: "Rastreador de terreno agreste encargado de proveer monturas a la corte.",
+    colSpan: "bento-col-6"
   },
   {
     nombre: "Marcos",
-    titulo: "Gran Maestre Alquimista y Médico de la Orden",
-    arquetipo: "Soporte Vital / Alquimia & Reanimación",
-    iconoColor: "cyan",
+    titulo: "Gran Maestre Alquimista y Médico",
+    arquetipo: "Soporte Vital / Alquimia",
+    tagColor: "blue",
     isKing: false,
     estado: "Convocado",
     arma: "Vara de Concentración & Daga Alquímica",
-    armadura: "Túnica de Protección y Mochila con Inyector",
-    deber: "Gestión de huertos medicinales, producción de pociones de salpicadura y rescate médico (PlayerRevive).",
-    habilidad: "Resurrección de Emergencia (Reanimación acelerada en batalla)",
-    bio: "Erudito conocedor de las mezclas botánicas y los secretos de las almas. Su presencia asegura que ningún hermano perezca en el desangrado durante las cruzadas."
+    armadura: "Túnica de Protección & Mochila con Inyector",
+    deber: "Formulación de pociones de salpicadura y rescate médico (PlayerRevive).",
+    habilidad: "Reanimación Rápida (Recuperación de aliados en 3s)",
+    bio: "Responsable de los huertos medicinales y la preservación de vidas en expedición.",
+    colSpan: "bento-col-4"
   },
   {
     nombre: "Alexandre",
-    titulo: "Alto Forjador e Ingeniero del Reino",
-    arquetipo: "Coloso de Acero / Maestro Minero",
-    iconoColor: "purple",
+    titulo: "Alto Forjador e Ingeniero",
+    arquetipo: "Coloso de Acero / Minería Profunda",
+    tagColor: "purple",
     isKing: false,
     estado: "Convocado",
     arma: "Gran Maza de Dos Manos & Picos de Diamante",
-    armadura: "Armadura Pesada de Herrería Reforzada",
-    deber: "Excavación de yacimientos profundos (Y=-58), automatización de mochilas y forja de armamento imperial.",
-    habilidad: "Golpe Sísmico (Demolición de blindajes y control de masas)",
-    bio: "Señor de las cavernas y del fuego del yunque. Nadie conoce mejor las profundidades de la tierra ni transforma el mineral en acero con tanta maestría."
+    armadura: "Armadura de Herrería Reforzada",
+    deber: "Extracción en cotas profundas (Y = -58) y forja de armamento modular.",
+    habilidad: "Golpe Sísmico (Demolición de blindajes pesados)",
+    bio: "Maestro del yunque encargado de equipar a la totalidad de la orden.",
+    colSpan: "bento-col-4"
   },
   {
     nombre: "César",
     titulo: "Gran Cazador de Sombras",
-    arquetipo: "DPS Crítico / Asesino Sigiloso",
-    iconoColor: "crimson",
+    arquetipo: "DPS Crítico / Flanqueador",
+    tagColor: "gray",
     isKing: false,
     estado: "Convocado",
-    arma: "Dagas Dobles Gemelas / Espadas Rápidas",
-    armadura: "Set de Cuero Oscuro de Sigilo",
-    deber: "Infiltración en criptas de The Graveyard, flanqueo de jefes y ejecución de objetivos prioritarios.",
-    habilidad: "Danza de Sombras (Rodada evasiva I-frames y críticos por la espalda)",
-    bio: "Asesino letal entrenado para moverse en la penumbra. Explota cada ventana de vulnerabilidad de los jefes para causar un daño devastador."
+    arma: "Dagas Duales & Katanas Rápidas",
+    armadura: "Set Liviano de Sigilo",
+    deber: "Incursión en criptas de The Graveyard y eliminación de objetivos clave.",
+    habilidad: "Danza Evasiva (I-frames extendidos y golpes a la espalda)",
+    bio: "Combatiente ágil que explota las ventanas de aturdimiento de los jefes.",
+    colSpan: "bento-col-4"
   }
 ];
 
@@ -157,44 +188,32 @@ function renderJugadores() {
   if (!container) return;
 
   container.innerHTML = JUGADORES_DATA.map(j => `
-    <div class="player-card ${j.isKing ? 'king' : ''}">
-      <div class="card-header">
-        <div class="card-title-group">
-          <h4>${j.nombre}</h4>
-          <div class="card-subtitle">${j.titulo}</div>
+    <div class="bento-card ${j.colSpan} ${j.isKing ? 'highlight' : ''} animate-entry">
+      <div class="bento-header">
+        <div class="bento-title-group">
+          <h3>${j.nombre}</h3>
+          <div class="bento-meta">${j.titulo}</div>
         </div>
-        <div class="player-avatar">
-          ${j.isKing ? getSvgIcon('crown') : getSvgIcon(j.iconoColor === 'emerald' ? 'bow' : j.iconoColor === 'cyan' ? 'potion' : j.iconoColor === 'purple' ? 'hammer' : 'sword')}
-        </div>
+        <span class="tag-pastel ${j.tagColor}">${j.estado}</span>
       </div>
-      <div class="card-body">
-        <div class="player-meta">
-          <div class="player-meta-item">
-            <div class="meta-label">Arquetipo</div>
-            <div class="meta-val">${j.arquetipo}</div>
+      <div class="bento-body">
+        <div class="metrics-row" style="margin-top: 0; padding-top: 0; border-top: none; margin-bottom: 1rem;">
+          <div class="metric-item">
+            <span class="metric-label">Arquetipo</span>
+            <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-primary);">${j.arquetipo}</span>
           </div>
-          <div class="player-meta-item">
-            <div class="meta-label">Estado</div>
-            <div class="meta-val">
-              <span class="badge ${j.isKing ? 'badge-gold' : 'badge-emerald'}">${j.estado}</span>
-            </div>
-          </div>
-          <div class="player-meta-item">
-            <div class="meta-label">Armamento</div>
-            <div class="meta-val">${j.arma}</div>
-          </div>
-          <div class="player-meta-item">
-            <div class="meta-label">Protección</div>
-            <div class="meta-val">${j.armadura}</div>
+          <div class="metric-item">
+            <span class="metric-label">Armamento</span>
+            <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-primary);">${j.arma}</span>
           </div>
         </div>
-        <p><strong>Deber en Raycresark:</strong> ${j.deber}</p>
-        <p><strong>Habilidad Distintiva:</strong> <span style="color: var(--text-gold);">${j.habilidad}</span></p>
-        <p style="font-size: 0.82rem; color: var(--text-muted); font-style: italic;">"${j.bio}"</p>
+        <p><strong>Responsabilidad:</strong> ${j.deber}</p>
+        <p><strong>Especialidad:</strong> ${j.habilidad}</p>
+        <p style="font-size: 0.84rem; color: var(--text-secondary); font-style: italic;">"${j.bio}"</p>
       </div>
-      <div class="card-footer">
-        <span>Consejo de Raycresark</span>
-        <span class="badge badge-gold">Mesa Redonda</span>
+      <div class="bento-footer">
+        <span>Asiento Oficial</span>
+        <span>Mesa Redonda</span>
       </div>
     </div>
   `).join('');
@@ -208,68 +227,62 @@ const CLASES_DATA = [
   {
     nombre: "Paladín de la Guardia",
     rol: "Tanque / Defensor Frontal",
-    icono: "shield",
     vida: 95,
     danio: 65,
     movilidad: 45,
     soporte: 70,
-    armas: "Espada & Escudo Pesado, Maza de Placas",
-    ventajas: ["Reducción de 30% al daño frontal con escudo levantado", "Atracción natural del agro enemigo", "Resistencia al empuje de jefes gigantes"]
+    armas: "Espada & Escudo de Torre, Maza de Placas",
+    ventajas: ["30% de mitigación al daño frontal con escudo", "Generación natural de agro enemigo", "Resistencia al retroceso de colosos"]
   },
   {
     nombre: "Cazador de Sombras",
     rol: "DPS Ágil / Asesino",
-    icono: "sword",
     vida: 60,
     danio: 95,
     movilidad: 90,
     soporte: 30,
     armas: "Dagas Duales, Katanas, Espadas Rápidas",
-    ventajas: ["Frames de invulnerabilidad aumentados al rodar (R)", "+40% de daño crítico golpeando por la espalda", "Velocidad de ataque incrementada en Better Combat"]
+    ventajas: ["Cuadros de invulnerabilidad aumentados en rodada (R)", "+40% de daño en impactos a la espalda", "Velocidad de ataque incrementada"]
   },
   {
     nombre: "Maestro de Bestias",
-    rol: "Ranger / Explorador Aéreo",
-    icono: "bow",
+    rol: "Ranger / Reconocimiento",
     vida: 70,
     danio: 80,
     movilidad: 85,
     soporte: 65,
     armas: "Arcos Largos, Ballestas, Lanzas de Caza",
-    ventajas: ["Menor consumo de estamina al planear con Paraglider", "Bonificación al domar y curar bestias de Alex's Mobs", "Visión táctica de objetivos lejanos"]
+    ventajas: ["Consumo reducido de estamina en Paraglider", "Eficacia al domesticar criaturas de Alex's Mobs", "Visión táctica de objetivos a larga distancia"]
   },
   {
     nombre: "Médico de Batalla",
     rol: "Sanador / Alquimista",
-    icono: "potion",
     vida: 65,
     danio: 50,
     movilidad: 60,
     soporte: 100,
-    armas: "Varas de Alma, Pociones de Salpicadura, Dagas",
-    ventajas: ["Velocidad de reanimación reducida a 3s en PlayerRevive", "Efecto duplicado en pociones curativas arrojadas", "Aura pasiva de regeneración de estamina a aliados"]
+    armas: "Varas de Alma, Pociones de Salpicadura",
+    ventajas: ["Tiempo de reanimación reducido a 3s en PlayerRevive", "Alcance aumentado en pociones arrojadizas", "Regeneración pasiva de estamina para aliados cercanos"]
   },
   {
     nombre: "Berserker Forjador",
-    rol: "Coloso / Demoledor de Masas",
-    icono: "hammer",
+    rol: "Coloso / Demoledor",
     vida: 90,
     danio: 90,
     movilidad: 40,
     soporte: 50,
     armas: "Grandes Espadas a Dos Manos, Mazas Pesadas",
-    ventajas: ["Ataques en área con gran arco de demolición", "Rompe guardias y aturde a enemigos blindados", "+50% de velocidad al minar en capas profundas"]
+    ventajas: ["Amplio arco de daño de área en Better Combat", "Ruptura de posturas en enemigos blindados", "+50% de rendimiento al minar en cotas profundas"]
   },
   {
     nombre: "Caballero Comandante",
     rol: "Líder Híbrido / Táctico",
-    icono: "crown",
     vida: 80,
     danio: 75,
     movilidad: 70,
     soporte: 80,
     armas: "Lanza de Caballería, Espada Larga y Estandarte",
-    ventajas: ["Inspiración militar que aumenta el daño de aliados", "Bonificación de salud a soldados reclutados (Human Companions)", "Coordinación en asedios y defensas de fortalezas"]
+    ventajas: ["Bonificación pasiva de daño a aliados cercanos", "Aumento de vitalidad en soldados reclutados (Human Companions)", "Coordinación en asedios y defensas de fortalezas"]
   }
 ];
 
@@ -278,48 +291,46 @@ function renderClases() {
   if (!container) return;
 
   container.innerHTML = CLASES_DATA.map(c => `
-    <div class="class-card">
-      <div class="card-header">
-        <div class="card-title-group">
-          <h4>${c.nombre}</h4>
-          <div class="card-subtitle">${c.rol}</div>
+    <div class="bento-card bento-col-4 animate-entry">
+      <div class="bento-header">
+        <div class="bento-title-group">
+          <h3>${c.nombre}</h3>
+          <div class="bento-meta">${c.rol}</div>
         </div>
-        <div class="card-icon">
-          ${getSvgIcon(c.icono)}
-        </div>
+        <span class="tag-pastel gray">Arquetipo</span>
       </div>
-      <div class="card-body">
-        <div class="stat-bar-group">
-          <div class="stat-bar-item">
-            <span class="stat-bar-label">Vitalidad</span>
-            <div class="stat-bar-track"><div class="stat-bar-fill" style="width: ${c.vida}%"></div></div>
-            <span class="stat-bar-val">${c.vida}</span>
+      <div class="bento-body">
+        <div class="stat-metric-list">
+          <div class="stat-metric-row">
+            <span class="stat-metric-name">Vitalidad</span>
+            <div class="stat-metric-bar"><div class="stat-metric-progress" style="width: ${c.vida}%"></div></div>
+            <span class="stat-metric-number">${c.vida}</span>
           </div>
-          <div class="stat-bar-item">
-            <span class="stat-bar-label">Ofensiva</span>
-            <div class="stat-bar-track"><div class="stat-bar-fill" style="width: ${c.danio}%"></div></div>
-            <span class="stat-bar-val">${c.danio}</span>
+          <div class="stat-metric-row">
+            <span class="stat-metric-name">Ofensiva</span>
+            <div class="stat-metric-bar"><div class="stat-metric-progress" style="width: ${c.danio}%"></div></div>
+            <span class="stat-metric-number">${c.danio}</span>
           </div>
-          <div class="stat-bar-item">
-            <span class="stat-bar-label">Movilidad</span>
-            <div class="stat-bar-track"><div class="stat-bar-fill" style="width: ${c.movilidad}%"></div></div>
-            <span class="stat-bar-val">${c.movilidad}</span>
+          <div class="stat-metric-row">
+            <span class="stat-metric-name">Movilidad</span>
+            <div class="stat-metric-bar"><div class="stat-metric-progress" style="width: ${c.movilidad}%"></div></div>
+            <span class="stat-metric-number">${c.movilidad}</span>
           </div>
-          <div class="stat-bar-item">
-            <span class="stat-bar-label">Soporte</span>
-            <div class="stat-bar-track"><div class="stat-bar-fill" style="width: ${c.soporte}%"></div></div>
-            <span class="stat-bar-val">${c.soporte}</span>
+          <div class="stat-metric-row">
+            <span class="stat-metric-name">Soporte</span>
+            <div class="stat-metric-bar"><div class="stat-metric-progress" style="width: ${c.soporte}%"></div></div>
+            <span class="stat-metric-number">${c.soporte}</span>
           </div>
         </div>
-        <p><strong>Armamento Inicial:</strong> ${c.armas}</p>
+        <p style="margin-top: 0.85rem;"><strong>Equipo:</strong> ${c.armas}</p>
         <p><strong>Rasgos Pasivos:</strong></p>
-        <ul class="card-list">
-          ${c.ventajas.map(v => `<li>${v}</li>`).join('')}
+        <ul style="list-style: square; padding-left: 1.15rem; font-size: 0.85rem; color: var(--text-secondary);">
+          ${c.ventajas.map(v => `<li style="margin-bottom: 0.3rem;">${v}</li>`).join('')}
         </ul>
       </div>
-      <div class="card-footer">
-        <span>Arquetipo Oficial</span>
-        <span class="badge badge-gold">Manual de Inicio</span>
+      <div class="bento-footer">
+        <span>Manual de Inicio</span>
+        <span>Forge 1.20.1</span>
       </div>
     </div>
   `).join('');
@@ -336,10 +347,10 @@ const JEFES_DATA = [
     mod: "Mutant Monsters",
     ubicacion: "Superficie nocturna / Bosques",
     dificultad: "Básica",
-    mecanica: "El zombi resucita hasta 3 veces si no lo quemas al caer noqueado. El esqueleto dispara ráfagas de flechas múltiples y salta provocando impactos de choque.",
-    debilidad: "Fuego continuo para evitar resurrección; esquivar el impacto con rodada (R).",
-    drops: "Hulk Hammer, restos mutantes, XP masiva.",
-    estrategia: "Pedro bloquea con escudo frontal; Alexandre y César rematan en el suelo y prenden con mechero."
+    mecanica: "El zombi resucita hasta 3 veces si no es incinerado al caer noqueado. El esqueleto ejecuta ráfagas múltiples y saltos con impacto sísmico.",
+    debilidad: "Fuego continuo para anular la resurrección; esquivar el impacto con rodada (R).",
+    drops: "Hulk Hammer, restos mutantes, XP acelerada.",
+    estrategia: "Pedro bloquea frontalmente; Alexandre y César rematan en el suelo y aplican fuego."
   },
   {
     tier: 1,
@@ -347,43 +358,43 @@ const JEFES_DATA = [
     mod: "Mowzie's Mobs",
     ubicacion: "Cámaras acorazadas subterráneas (Y: -20 a 20)",
     dificultad: "Media",
-    mecanica: "Inmune a todo daño frontal. Clava su hacha gigante en la roca durante 3 segundos tras un golpe vertical.",
-    debilidad: "Punto débil en la espalda mientras su hacha está atascada.",
+    mecanica: "Blindaje frontal 100% impenetrable. Clava el hacha en el terreno durante 3 segundos tras un ataque vertical.",
+    debilidad: "Punto débil expuesto en la espalda durante el atasque del hacha.",
     drops: "Wrought Helm (Casco indestructible), Axe of the Thousand Metal.",
-    estrategia: "El tanque provoca el hachazo; los DPS ruedan hacia la espalda para clavar ataques críticos."
+    estrategia: "El tanque absorbe el golpe; los atacantes ruedan hacia la espalda para encajar golpes críticos."
   },
   {
     tier: 1,
     nombre: "Frostmaw",
     mod: "Mowzie's Mobs",
-    ubicacion: "Cimas nevadas y montañas glaciares",
+    ubicacion: "Cumbres y montañas glaciares",
     dificultad: "Media",
-    mecanica: "Aliento de hielo continuo que ralentiza y congela. Salto de demolición en área.",
-    debilidad: "Daño ígneo y rotación continua alrededor de su cuerpo.",
-    drops: "Ice Crystal (Rayo de escarcha continuo).",
-    estrategia: "Cristhian hostiga a distancia con flechas mientras el grupo esquiva el aliento de hielo."
+    mecanica: "Aliento de escarcha continuo que congela y ralentiza. Impacto en salto con demolición de área.",
+    debilidad: "Daño ígneo y desplazamiento continuo en círculos.",
+    drops: "Ice Crystal (Proyector continuo de escarcha).",
+    estrategia: "Cristhian aplica daño a distancia con proyectiles mientras el grupo evade el cono de frío."
   },
   {
     tier: 1,
     nombre: "The Corrupted Champion / Lich",
     mod: "The Graveyard",
-    ubicacion: "Criptas y Cementerios gigantescos",
+    ubicacion: "Criptas y cementerios de gran escala",
     dificultad: "Media-Alta",
-    mecanica: "Invoca esbirros no-muertos y crea charcos oscuros que aplican efecto Decay/Wither continuo.",
-    debilidad: "Pociones curativas, cubos de leche y daño sagrado/fuego.",
+    mecanica: "Invocación de no-muertos y generación de charcos de corrupción que aplican efecto Decay/Wither.",
+    debilidad: "Insumos curativos, cubos de leche y daño radiante/fuego.",
     drops: "Reliquias oscuras, Fragmentos de Alma, gemas de estamina.",
-    estrategia: "Marcos mantiene a todos con vida con salpicaduras mientras César caza al Lich."
+    estrategia: "Marcos sostiene al grupo con salpicaduras curativas mientras César ataca los flancos del Lich."
   },
   {
     tier: 2,
     nombre: "Ghost of Captain Cornelia",
     mod: "Aquamirae",
-    ubicacion: "Barco sumergido en el Océano Helado",
+    ubicacion: "Buque sumergido en el Océano Glacial",
     dificultad: "Alta",
-    mecanica: "Embestidas a gran velocidad, invocación de clones de hielo y torbellino de congelación abisal.",
-    debilidad: "Daño de Fuego constante para mitigar su regeneración.",
-    drops: "Terrible Sword, Divider, Golden Feather, materiales de escamas.",
-    estrategia: "Llevar pociones de respiración acuática. Destruir clones rápido antes de que congelen al grupo."
+    mecanica: "Embestidas de alta velocidad, invocación de clones de hielo y vórtice de frío abisal.",
+    debilidad: "Daño de fuego sostenido para mitigar la regeneración de vida.",
+    drops: "Terrible Sword, Divider, Golden Feather, escamas abisales.",
+    estrategia: "Requeridas pociones de respiración acuática. Destruir clones rápidamente."
   },
   {
     tier: 3,
@@ -391,10 +402,10 @@ const JEFES_DATA = [
     mod: "L_Ender's Cataclysm",
     ubicacion: "Monstrous Forge (Nether)",
     dificultad: "Muy Alta",
-    mecanica: "Terremotos masivos con martillos colosales y disparos de lava fundida.",
-    debilidad: "Movimiento constante con Paraglider en altura; golpeo en las patas tras sus ataques.",
+    mecanica: "Terremotos con martillos colosales y expulsión de lava fundida.",
+    debilidad: "Desplazamiento aéreo continuo con Paraglider; castigo a las extremidades inferiores.",
     drops: "Monstrous Horn, Lingotes de Netherite Puro, The Incinerator.",
-    estrategia: "Subirse a las plataformas altas; no quedarse en el suelo durante el golpe doble de martillo."
+    estrategia: "Tomar posición en las plataformas superiores para evitar el impacto de área en suelo."
   },
   {
     tier: 3,
@@ -402,43 +413,43 @@ const JEFES_DATA = [
     mod: "L_Ender's Cataclysm",
     ubicacion: "Burning Arena (Nether)",
     dificultad: "Muy Alta",
-    mecanica: "Fase 1 con escudo y espada pesada; Fase 2 con doble espada llameante, levitación y columnas de fuego.",
-    debilidad: "Pociones de Resistencia al Fuego obligatorias; esquivar su caída en picada con doble rodada.",
+    mecanica: "Fase 1 con escudo y espada pesada; Fase 2 con doble espada ígnea, levitación y columnas de fuego.",
+    debilidad: "Pociones de Resistencia al Fuego obligatorias; doble rodada para esquivar la caída en picada.",
     drops: "Ignitium Ingot (Armadura inmune a fuego), The Incinerator.",
-    estrategia: "Nunca golpear su escudo de frente para no ser aturdido. El grupo debe atacar en abanico."
+    estrategia: "Evitar golpear el escudo frontal para no sufrir aturdimiento. Despliegue en abanico."
   },
   {
     tier: 4,
     nombre: "The Harbinger",
     mod: "L_Ender's Cataclysm",
-    ubicacion: "Ancient Factory (Profundidades Overworld)",
+    ubicacion: "Ancient Factory (Cotas profundas del Overworld)",
     dificultad: "Épica",
-    mecanica: "Láser carmesí de carga continua, misiles teledirigidos de Wither y escudo deflector eléctrico.",
-    debilidad: "Cubrirse detrás de columnas; atacarlo cuerpo a cuerpo cuando activa su escudo eléctrico.",
+    mecanica: "Haz láser continuo de carga, proyectiles teledirigidos de Wither y escudo eléctrico deflector.",
+    debilidad: "Cobertura tras columnas sólidas; combate cuerpo a cuerpo durante el escudo reflector.",
     drops: "Witherite Ingot, Laser Gatling, Netherite Mechanical Arm.",
-    estrategia: "Combate de posicionamiento estricto. El tanque usa escudo de torre para interceptar misiles."
+    estrategia: "Control estricto de coberturas. El tanque intercepta proyectiles con escudo de torre."
   },
   {
     tier: 4,
     nombre: "Void Worm",
     mod: "Alex's Mobs",
-    ubicacion: "El Vacío del End (Invocar con Mysterious Worm)",
+    ubicacion: "El Vacío del End (Invocación con Mysterious Worm)",
     dificultad: "Épica",
-    mecanica: "Coloso volador de múltiples segmentos que abre portales interdimensionales.",
-    debilidad: "Golpear los segmentos luminosos del cuerpo (la cabeza es ultra resistente).",
-    drops: "Void Worm Eye, Void Worm Mandible (para craftear el Dimensional Carver).",
-    estrategia: "Uso obligatorio de Paraglider o Elytra para no caer al vacío infinito."
+    mecanica: "Coloso volador de múltiples segmentos con apertura de portales dimensionales.",
+    debilidad: "Impactos directos en los segmentos corporales luminosos (la cabeza presenta alta resistencia).",
+    drops: "Void Worm Eye, Void Worm Mandible (para fabricar el Dimensional Carver).",
+    estrategia: "Uso obligatorio de Paraglider o Elytra para prevenir caídas al vacío."
   },
   {
     tier: 5,
     nombre: "The Leviathan",
     mod: "L_Ender's Cataclysm",
     ubicacion: "Sunken City (Fosa Abisal del End)",
-    dificultad: "Legendaria / Jefe Final",
-    mecanica: "3 fases subacuáticas, 4 núcleos orbitales que le dan invulnerabilidad y vórtice de Agujero Negro.",
-    debilidad: "Destruir primero los 4 orbes dimensionales y nadar en dirección opuesta al vórtice.",
+    dificultad: "Legendaria / Objetivo Final",
+    mecanica: "Tres fases subacuáticas, cuatro orbes protectores y vórtice gravitacional de agujero negro.",
+    debilidad: "Destrucción secuencial de los orbes antes de dañar el cuerpo principal; nado en oposición al vórtice.",
     drops: "Abyssal Sacrifice, Tidal Claws, Título de Campeón de las Cenizas.",
-    estrategia: "Toda la Mesa Redonda al máximo nivel, tótems de inmortalidad y pociones de fuerza II."
+    estrategia: "Despliegue de los 6 miembros al máximo nivel de equipamiento, tótems y pociones de fuerza II."
   }
 ];
 
@@ -451,39 +462,34 @@ function renderJefes(filterTier = 'all') {
     : JEFES_DATA.filter(j => j.tier.toString() === filterTier);
 
   container.innerHTML = filtered.map(j => `
-    <div class="card">
-      <div class="card-header">
-        <div class="card-title-group">
-          <h4>${j.nombre}</h4>
-          <div class="card-subtitle">${j.mod} — Tier ${j.tier}</div>
+    <div class="bento-card bento-col-6 animate-entry">
+      <div class="bento-header">
+        <div class="bento-title-group">
+          <h3>${j.nombre}</h3>
+          <div class="bento-meta">${j.mod} &bull; Tier ${j.tier}</div>
         </div>
-        <div class="card-icon ${j.tier >= 4 ? 'purple' : j.tier >= 3 ? 'crimson' : 'gold'}">
-          ${getSvgIcon(j.tier >= 4 ? 'skull' : 'sword')}
-        </div>
+        <span class="tag-pastel ${j.tier >= 4 ? 'purple' : j.tier >= 3 ? 'red' : 'yellow'}">${j.dificultad}</span>
       </div>
-      <div class="card-body">
-        <div class="player-meta">
-          <div class="player-meta-item">
-            <div class="meta-label">Ubicación</div>
-            <div class="meta-val">${j.ubicacion}</div>
+      <div class="bento-body">
+        <div class="metrics-row" style="margin-top: 0; padding-top: 0; border-top: none; margin-bottom: 0.85rem;">
+          <div class="metric-item">
+            <span class="metric-label">Ubicación</span>
+            <span style="font-size: 0.82rem; font-weight: 600; color: var(--text-primary);">${j.ubicacion}</span>
           </div>
-          <div class="player-meta-item">
-            <div class="meta-label">Dificultad</div>
-            <div class="meta-val">
-              <span class="badge ${j.tier >= 4 ? 'badge-purple' : j.tier >= 3 ? 'badge-crimson' : 'badge-gold'}">${j.dificultad}</span>
-            </div>
+          <div class="metric-item">
+            <span class="metric-label">Botín Mítico</span>
+            <span style="font-size: 0.82rem; font-weight: 600; color: var(--pastel-blue-text);">${j.drops}</span>
           </div>
         </div>
         <p><strong>Mecánica:</strong> ${j.mecanica}</p>
-        <p><strong>Debilidad:</strong> <span style="color: var(--text-gold);">${j.debilidad}</span></p>
-        <p><strong>Botín Mítico:</strong> <span style="color: var(--text-cyan);">${j.drops}</span></p>
-        <p style="margin-top: 0.5rem; font-size: 0.82rem; color: var(--text-secondary); background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 4px;">
-          <strong>Táctica de Raycresark:</strong> ${j.estrategia}
+        <p><strong>Vulnerabilidad:</strong> ${j.debilidad}</p>
+        <p style="margin-top: 0.65rem; padding: 0.65rem 0.85rem; background: var(--bg-surface-subtle); border-radius: var(--radius-xs); font-size: 0.82rem; color: var(--text-secondary);">
+          <strong>Táctica de la Orden:</strong> ${j.estrategia}
         </p>
       </div>
-      <div class="card-footer">
-        <span>Cenizas del Cataclismo</span>
-        <span class="badge badge-muted">Tier ${j.tier}</span>
+      <div class="bento-footer">
+        <span>Fase de Encuentro</span>
+        <span>Tier ${j.tier}</span>
       </div>
     </div>
   `).join('');
@@ -495,29 +501,29 @@ function renderJefes(filterTier = 'all') {
 
 const MODS_DATA = [
   { nombre: "L_Ender's Cataclysm", cat: "jefes", desc: "Jefes titánicos de mazmorras colosales (Netherite Monstrosity, Ignis, Harbinger, Leviathan)." },
-  { nombre: "Aquamirae", cat: "jefes", desc: "Océanos gélidos, criaturas abisales y el barco fantasma de la Capitana Cornelia." },
-  { nombre: "Mowzie's Mobs", cat: "jefes", desc: "Jefes con animaciones fluidas como el Ferrous Wroughtnaut y el temible Frostmaw." },
-  { nombre: "The Graveyard", cat: "jefes", desc: "Cementerios embrujados, criptas subterráneas, esqueletos malditos y el jefe Lich." },
-  { nombre: "Mutant Monsters", cat: "jefes", desc: "Versiones mutantes y aterradoras de los monstruos clásicos de Minecraft." },
-  { nombre: "Bosses of Mass Destruction", cat: "jefes", desc: "Jefes de mundo abierto como el Night Lich y Void Blossom." },
-  { nombre: "Alex's Mobs", cat: "criaturas", desc: "Docenas de criaturas salvajes realistas y míticas, incluyendo el colosal Void Worm." },
-  { nombre: "Better Combat", cat: "combate", desc: "Sistema de combate fluido estilo Hack & Slash, combos de armas y rodadas con frames de invulnerabilidad." },
-  { nombre: "Marium's Soulslike Weaponry", cat: "combate", desc: "Armamento legendario, katanas, ultra espadas y jefes inspirados en Dark Souls / Elden Ring." },
-  { nombre: "Armor of the Ages", cat: "combate", desc: "Sets históricos de armaduras samurái, centurión y caballeros de la antigüedad." },
-  { nombre: "Knight Quest Reforged", cat: "combate", desc: "Armaduras medievales de alta calidad y contenido de caballería." },
-  { nombre: "When Dungeons Arise", cat: "mundo", desc: "Fortalezas aéreas, palacios en ruinas y mazmorras titánicas por todo el mapa." },
-  { nombre: "Incendium", cat: "mundo", desc: "Transformación total del Nether con volcanes, ciudades flotantes y biomas extremos." },
-  { nombre: "Takes a Pillage", cat: "mundo", desc: "Nuevos campamentos, arqueros y puestos de asedio de saqueadores." },
-  { nombre: "Tax Castle Pillager", cat: "mundo", desc: "Castillos feudales gobernados por señores de la guerra y tropas recaudadoras." },
-  { nombre: "Dungeons and Taverns", cat: "mundo", desc: "Tabernas acogedoras, torres y mazmorras medievales en el Overworld." },
-  { nombre: "Paraglider", cat: "utilidad", desc: "Planeador y sistema de estamina / corazones estilo Zelda Breath of the Wild." },
-  { nombre: "PlayerRevive", cat: "utilidad", desc: "Mecánica cooperativa de desangrado (60s) y reanimación manteniendo clic derecho 5s." },
-  { nombre: "Sophisticated Backpacks", cat: "utilidad", desc: "Mochilas personalizables con mejoras de auto-smelt, imán, compresión y alimentación." },
-  { nombre: "Waystones", cat: "utilidad", desc: "Piedras de teletransporte rápido entre aldeas, fortalezas y arenas de combate." },
-  { nombre: "Xaero's Minimap & WorldMap", cat: "utilidad", desc: "Minimapa y mapa mundial con registro de waypoints y áreas exploradas." },
-  { nombre: "Human Companions", cat: "utilidad", desc: "Compañeros humanos reclutables dándoles comida para patrullar y defender." },
-  { nombre: "Boss Checklist", cat: "utilidad", desc: "Interfaz dentro del juego con tecla K para rastrear los jefes derrotados." },
-  { nombre: "Lootr", cat: "utilidad", desc: "Cofres instanciados por jugador para que todos los miembros del equipo reciban botín." }
+  { nombre: "Aquamirae", cat: "jefes", desc: "Océanos gélidos, criaturas abisales y el buque espectral de la Capitana Cornelia." },
+  { nombre: "Mowzie's Mobs", cat: "jefes", desc: "Jefes con animaciones dinámicas: Ferrous Wroughtnaut y Frostmaw." },
+  { nombre: "The Graveyard", cat: "jefes", desc: "Cementerios, criptas subterráneas y el encuentro con el Lich." },
+  { nombre: "Mutant Monsters", cat: "jefes", desc: "Variantes mutadas de las criaturas básicas de Minecraft." },
+  { nombre: "Bosses of Mass Destruction", cat: "jefes", desc: "Jefes de mundo abierto: Night Lich y Void Blossom." },
+  { nombre: "Alex's Mobs", cat: "mundo", desc: "Fauna realista y criaturas míticas, incluyendo el Void Worm." },
+  { nombre: "Better Combat", cat: "combate", desc: "Sistema de combate fluido, combos de armas y rodadas evasivas con I-frames." },
+  { nombre: "Marium's Soulslike Weaponry", cat: "combate", desc: "Armamento legendario y mecánicas inspiradas en obras Soulslike." },
+  { nombre: "Armor of the Ages", cat: "combate", desc: "Sets históricos de armaduras samurái, centurión y caballeros." },
+  { nombre: "Knight Quest Reforged", cat: "combate", desc: "Armamento medieval y componentes de caballería." },
+  { nombre: "When Dungeons Arise", cat: "mundo", desc: "Fortalezas aéreas, palacios en ruinas y mazmorras a gran escala." },
+  { nombre: "Incendium", cat: "mundo", desc: "Reestructuración total del Nether con volcanes y ciudades flotantes." },
+  { nombre: "Takes a Pillage", cat: "mundo", desc: "Campamentos avanzados y puestos de asedio de saqueadores." },
+  { nombre: "Tax Castle Pillager", cat: "mundo", desc: "Castillos feudales gobernados por señores de la guerra." },
+  { nombre: "Dungeons and Taverns", cat: "mundo", desc: "Tabernas, torres y mazmorras terrestres." },
+  { nombre: "Paraglider", cat: "utilidad", desc: "Planeador y sistema de resistencia/estamina en tiempo real." },
+  { nombre: "PlayerRevive", cat: "utilidad", desc: "Mecánica cooperativa de desangrado (60s) y reanimación (5s)." },
+  { nombre: "Sophisticated Backpacks", cat: "utilidad", desc: "Mochilas modulares con mejoras de imán, fundición y compresión." },
+  { nombre: "Waystones", cat: "utilidad", desc: "Monolitos de teletransporte rápido entre bases y arenas." },
+  { nombre: "Xaero's Minimap & WorldMap", cat: "utilidad", desc: "Minimapa y mapa mundial con waypoints y cartografía." },
+  { nombre: "Human Companions", cat: "utilidad", desc: "Soldados y acompañantes NPC reclutables para la guarnición." },
+  { nombre: "Boss Checklist", cat: "utilidad", desc: "Registro interactivo en tecla K para verificar jefes abatidos." },
+  { nombre: "Lootr", cat: "utilidad", desc: "Cofres instanciados individualmente para distribución equitativa de botín." }
 ];
 
 function renderMods(filterCat = 'all', searchQuery = '') {
@@ -532,19 +538,19 @@ function renderMods(filterCat = 'all', searchQuery = '') {
   });
 
   if (filtered.length === 0) {
-    container.innerHTML = `<tr><td colspan="3" style="text-align:center; padding: 2rem; color: var(--text-muted);">No se encontraron mods que coincidan con la búsqueda.</td></tr>`;
+    container.innerHTML = `<tr><td colspan="3" style="text-align:center; padding: 2rem; color: var(--text-muted);">No se encontraron módulos coincidentes.</td></tr>`;
     return;
   }
 
   container.innerHTML = filtered.map(m => `
     <tr>
-      <td style="font-weight: 700; color: var(--text-primary); font-family: var(--font-serif);">${m.nombre}</td>
+      <td style="font-weight: 600; color: var(--text-primary); font-family: var(--font-sans);">${m.nombre}</td>
       <td>
-        <span class="badge ${m.cat === 'jefes' ? 'badge-crimson' : m.cat === 'combate' ? 'badge-gold' : m.cat === 'mundo' ? 'badge-purple' : 'badge-cyan'}">
+        <span class="tag-pastel ${m.cat === 'jefes' ? 'red' : m.cat === 'combate' ? 'yellow' : m.cat === 'mundo' ? 'purple' : 'blue'}">
           ${m.cat.toUpperCase()}
         </span>
       </td>
-      <td style="color: var(--text-secondary);">${m.desc}</td>
+      <td style="color: var(--text-body);">${m.desc}</td>
     </tr>
   `).join('');
 }
@@ -554,7 +560,6 @@ function renderMods(filterCat = 'all', searchQuery = '') {
    ========================================================================== */
 
 function initSearchAndFilters() {
-  // Mods search and filter
   const modSearch = document.getElementById('mod-search-input');
   const modFilters = document.querySelectorAll('.mod-filter-btn');
   let currentModCat = 'all';
@@ -574,7 +579,6 @@ function initSearchAndFilters() {
     });
   });
 
-  // Jefes tier filter
   const bossFilters = document.querySelectorAll('.boss-filter-btn');
   bossFilters.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -584,26 +588,4 @@ function initSearchAndFilters() {
       renderJefes(tier);
     });
   });
-}
-
-/* ==========================================================================
-   LIBRERÍA DE ICONOS SVG VECTORIALES
-   ========================================================================== */
-
-function getSvgIcon(type) {
-  const icons = {
-    crown: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"/></svg>`,
-    shield: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
-    sword: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="14.5 17.5 3 6 3 3 6 3 17.5 14.5"/><line x1="13" y1="19" x2="19" y2="13"/><line x1="16" y1="16" x2="20" y2="20"/><line x1="19" y1="21" x2="21" y2="19"/></svg>`,
-    bow: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3c5 0 9 4 9 9s-4 9-9 9"/><line x1="6" y1="3" x2="6" y2="21"/><line x1="6" y1="12" x2="21" y2="12"/><polyline points="18 9 21 12 18 15"/></svg>`,
-    potion: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v4l-4.5 7.5a4 4 0 0 0 3.5 6.5h6a4 4 0 0 0 3.5-6.5L14 6V2"/><line x1="8.5" y1="2" x2="15.5" y2="2"/><path d="M9 13h6"/></svg>`,
-    hammer: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 12-8.5 8.5c-.8.8-2.2.8-3 0 0 0 0 0 0 0-.8-.8-.8-2.2 0-3L12 9"/><path d="M17.64 4.36 20.2 6.92a2 2 0 0 1 0 2.83l-1.41 1.41a2 2 0 0 1-2.83 0L13.4 8.6a2 2 0 0 1 0-2.83l1.41-1.41a2 2 0 0 1 2.83 0z"/><path d="m14 7 3 3"/></svg>`,
-    skull: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="12" r="1"/><circle cx="15" cy="12" r="1"/><path d="M8 20v2h8v-2"/><path d="m12.5 17-.5-1-.5 1h1z"/><path d="M16 20a3 3 0 0 0 1.5-2.6 6.5 6.5 0 1 0-11 0A3 3 0 0 0 8 20"/></svg>`,
-    book: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>`,
-    clock: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
-    users: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
-    box: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>`,
-    check: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`
-  };
-  return icons[type] || icons.shield;
 }
