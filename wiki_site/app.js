@@ -21,7 +21,7 @@ function initRouter() {
   const sections = document.querySelectorAll('.page-section');
 
   function navigate(targetId) {
-    const validTargets = ['wiki', 'mods', 'jugadores', 'clases', 'jefes', 'progresion'];
+    const validTargets = ['history', 'wiki', 'mods', 'jugadores', 'clases', 'jefes', 'progresion'];
     const activeTarget = validTargets.includes(targetId) ? targetId : 'wiki';
 
     // Update active nav links
