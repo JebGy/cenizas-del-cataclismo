@@ -61,6 +61,7 @@ Bienvenido a la edición optimizada y refinada de **Cenizas del Cataclismo**, aj
 * **Nature's Compass:** Brújula de exploración para localizar y seguir el rastro de cualquier bioma en tiempo real.
 * **Sparse Structures:** Espaciador de mazmorras para mantener distancias equilibradas y evitar lag de ticks.
 * **Towns and Towers:** Aldeas y puestos de avanzada expandidos y habitados.
+* **Lootr:** Cofres de mazmorras y estructuras con botín individual e independiente por jugador (nadie se queda sin recompensas).
 * **Gravestone Mod:** Generación de tumbas seguras al morir para proteger el inventario.
 
 ---
