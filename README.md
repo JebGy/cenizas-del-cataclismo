@@ -51,17 +51,29 @@ Bienvenido a la edición optimizada y refinada de **Cenizas del Cataclismo**, aj
 
 ---
 
-## 🌲 5. Generación de Mundo y Fauna
+## 🌲 5. Generación de Mundo, Exploración y Utilidades
 
-* **Regions Unexplored:** Decenas de biomas hermosos, limpios y optimizados (sin sobrecarga de paletas).
+* **Regions Unexplored:** Más de 70 biomas hermosos, limpios y optimizados (sin sobrecarga de memoria de texturas).
 * **Alex's Caves:** 5 mundos subterráneos únicos (Toxic, Primordial, Magnetic, Abyssal, Forlorn).
 * **Alex's Mobs:** Más de 80 animales y criaturas con mecánicas de domesticación.
+* **Waystones:** Monolitos y piedras de teletransporte rápido entre bases, aldeas y fortalezas mediante pergaminos (`Warp Scrolls`).
+* **Traveler's Backpack:** Mochilas expandibles con almacenamiento de fluidos, cama integrada y accesorios.
+* **Nature's Compass:** Brújula de exploración para localizar y seguir el rastro de cualquier bioma en tiempo real.
 * **Sparse Structures:** Espaciador de mazmorras para mantener distancias equilibradas y evitar lag de ticks.
 * **Towns and Towers:** Aldeas y puestos de avanzada expandidos y habitados.
+* **Gravestone Mod:** Generación de tumbas seguras al morir para proteger el inventario.
 
 ---
 
-## 🚀 6. Paquete de Rendimiento (Ultra-Optimizado)
+## 🗺️ 6. Interfaz y Navegación
+
+* **Diorama Map & Minimap:** Minimapa estilizado en perspectiva isométrica voxelizada en tiempo real. Consume mínimos recursos y es 100% del lado del cliente.
+* **Just Enough Items (JEI):** Consulta instantánea de recetas, usos y drops de cualquier bloque o ítem.
+* **Jade / WAILA:** Información flotante sobre el bloque, mob o contenedor al que estés mirando.
+
+---
+
+## 🚀 7. Paquete de Rendimiento (Ultra-Optimizado)
 
 * **Embeddium + Embeddium Extra:** Reescritura del motor gráfico para triplicar los FPS en el cliente.
 * **ImmediatelyFast:** Acelera el renderizado de texto, menús, HUD y entidades.
