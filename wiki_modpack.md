@@ -36,20 +36,32 @@ Bienvenido a la edición optimizada y refinada de **Cenizas del Cataclismo**, aj
 
 ---
 
-## 👹 4. Jefes Colosales y Mazmorras
+## 👹 4. Jefes Colosales y Cumbres de los Reinos
+
+### 👑 Los 4 Titanes Supremos (Cumbres Territoriales)
+| Reino / Dominio | Jefe Supremo | Mod de Origen | Descripción y Desafío |
+| :--- | :--- | :--- | :--- |
+| **Overworld** | **Monarch of Chaos** | *Marium's Soulslike Weaponry* | Invocado con el *Chaos Orb*. Desata tormentas de caos, proyectiles etéreos y cráneos malditos. Drop: Corona y Capa del Caos. |
+| **Mares** | **The Leviathan** | *L_Ender's Cataclysm* | Titan abisal en la *Sunken City*. Invulnerabilidad temporal con núcleos, agujeros negros y tifones. Drop: *Tidal Claws* y *Abyssal Egg*. |
+| **Nether** | **Azasel (Azazel)** | *Cult of Azazel* | Divinidad demoníaca en la mansión del culto en el Nether. Múltiples fases de magia oscura y esbirros. Drop: Armadura de vuelo y *Totem of Rebirth*. |
+| **End** | **Void Worm** | *Alex's Mobs* | Coloso del vacío del End invocado con el *Mysterious Worm*. Rompe el espacio abriendo portales dimensionales sónicos. Drop: *Dimensional Carver*. |
+
+---
+
+### ⚔️ Otros Jefes y Mazmorras del Mundo
 
 | Jefe / Estructura | Mod | Desafío y Recompensa |
 | :--- | :--- | :--- |
 | **Netherite Monstrosity & Ignis** | *L_Ender's Cataclysm* | En Monstrous Forge y Burning Arena (Nether). Drop: Materiales para armaduras de Ignitium e Incinerator. |
-| **The Harbinger & Leviathan** | *L_Ender's Cataclysm* | En Ancient Factory y Sunken City. Drops legendarios de fin de juego. |
+| **The Harbinger** | *L_Ender's Cataclysm* | En Ancient Factory. Drops legendarios de fin de juego y componentes Witherite. |
 | **Ferrous Wroughtnaut & Frostmaw** | *Mowzie's Mobs* | Cámaras subterráneas y picos helados. Casco impenetrable y hacha gigante. |
 | **Night Lich & Void Blossom** | *Bosses of Mass Destruction* | Torres frías y cuevas de flores abisales. |
 | **Captain Cornelia** | *Aquamirae* | Barco pirata fantasma en océano congelado. Armadura de coral y espadas abisales. |
-| **Void Worm** | *Alex's Mobs* | El jefe colosal del vacío del End. |
-| **YUNG's Suite Completa** | *YUNG's* | Overhaul masivo de Minas, Fortalezas del Nether y End, Templos y Mazmorras subterráneas. |
+| **Cult of Azazel** | *Cult of Azazel* | Estructuras masivas en el Nether y Overworld, puzzles y enfrentamiento divino. |
 | **Bosses'Rise (5 World Bosses)** | *Bosses'Rise* | Sirok the Sandworm, Skor, Ashlord the Dragon, Helvar y Nerakyss the Kraken. Drop: Kraken Cannon y sets Souls-like. |
 | **Apocalyptic Bosses (+25 Jefes)** | *Apocalyptic Bosses* | Void Dragon, Lava Lord, Demonic King, Frost Lord y hordas colosales. Drops: Armaduras y armas míticas OP. |
 | **When Dungeons Arise (+ Seven Seas)** | *WDA* | Ciudades flotantes y flotas de barcos corsarios en mar abierto. |
+| **YUNG's Suite Completa** | *YUNG's* | Overhaul masivo de Minas, Fortalezas del Nether y End, Templos y Mazmorras subterráneas. |
 
 ---
 
