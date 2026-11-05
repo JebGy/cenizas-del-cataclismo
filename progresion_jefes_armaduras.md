@@ -5,16 +5,43 @@ Este documento establece la ruta oficial de progresión para ti y tu equipo, con
 
 ---
 
-## 🧭 Diagrama de Flujo de Progresión
+## 🧭 Diagrama de Flujo y Cumbres de los Reinos
 
 ```mermaid
 graph TD
-    T0["Tier 0: Supervivencia Básica<br/>(Hierro / Cuero Reforzado)"] --> T1["Tier 1: Mazmorras y Campeones<br/>(Diamante / Sets de Knight Quest)"]
-    T1 --> T2["Tier 2: El Océano Helado<br/>(Armadura de Teratoma / Aquamirae)"]
-    T2 --> T3["Tier 3: El Infierno Volcánico<br/>(Netherite / Ignitium / Forja Monstrous)"]
-    T3 --> T4["Tier 4: La Fábrica y el Fin<br/>(Armadura Wither / Mechanical Harbinger / Void Worm)"]
-    T4 --> T5["Tier 5: Los Titanes del Vacío<br/>(Witherite / Ender Guardian / The Leviathan)"]
+    subgraph "Progresión General"
+        T0["Tier 0: Supervivencia Básica"] --> T1["Tier 1: Mazmorras y Campeones"]
+        T1 --> T2["Tier 2: Océano y Criaturas Abisales"]
+        T2 --> T3["Tier 3: El Infierno del Nether"]
+        T3 --> T4["Tier 4: La Fábrica y el Fin"]
+        T4 --> T5["Tier 5: Endgame y Titanes"]
+    end
+
+    subgraph "👑 Los 4 Reyes Supremos"
+        OW["🌍 Overworld: Monarch of Chaos<br/>(Soulslike Weaponry)"]
+        SEA["🌊 Mares: The Leviathan<br/>(L_Ender's Cataclysm)"]
+        NETH["🔥 Nether: Azasel / Azazel<br/>(Cult of Azazel)"]
+        END["🌌 End: Void Worm<br/>(Alex's Mobs)"]
+    end
+
+    T3 -.-> OW
+    T3 -.-> SEA
+    T4 -.-> NETH
+    T5 -.-> END
 ```
+
+---
+
+## 👑 Los 4 Titanes Supremos (Cumbres por Dimensión / Reino)
+
+| Reino | Jefe Supremo | Mod | Cómo Invocar / Dónde Encontrarlo | Drop Legendario |
+| :--- | :--- | :--- | :--- | :--- |
+| **🌍 Overworld** | **Monarch of Chaos** | *Marium's Soulslike Weaponry* | Craftear el **Chaos Orb** con almas de Day Stalker y Night Prowler para iniciar la Tormenta de Caos. | *Crown of Chaos*, *Cape of Chaos*, *Helm of Chaos*. |
+| **🌊 Mares** | **The Leviathan** | *L_Ender's Cataclysm* | En la **Sunken City** en el fondo del océano abisal. Usa el *Abyssal Egg* en el altar. | *Tidal Claws*, *Abyssal Sacrifice*. |
+| **🔥 Nether** | **Azasel (Azazel)** | *Cult of Azazel* | En la imponente **Mansión del Culto de Azazel** en el Nether (3 zonas de desafíos). | Armadura de vuelo divina y *Totem of Rebirth*. |
+| **🌌 End** | **Void Worm** | *Alex's Mobs* | Arrojando un **Mysterious Worm** al vacío entre las islas exteriores del End. | *Void Worm Eye*, *Void Worm Mandible* (*Dimensional Carver*). |
+
+---
 
 ---
 
