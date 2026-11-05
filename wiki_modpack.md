@@ -47,6 +47,8 @@ Bienvenido a la edición optimizada y refinada de **Cenizas del Cataclismo**, aj
 | **Captain Cornelia** | *Aquamirae* | Barco pirata fantasma en océano congelado. Armadura de coral y espadas abisales. |
 | **Void Worm** | *Alex's Mobs* | El jefe colosal del vacío del End. |
 | **YUNG's Suite Completa** | *YUNG's* | Overhaul masivo de Minas, Fortalezas del Nether y End, Templos y Mazmorras subterráneas. |
+| **Bosses'Rise (5 World Bosses)** | *Bosses'Rise* | Sirok the Sandworm, Skor, Ashlord the Dragon, Helvar y Nerakyss the Kraken. Drop: Kraken Cannon y sets Souls-like. |
+| **Apocalyptic Bosses (+25 Jefes)** | *Apocalyptic Bosses* | Void Dragon, Lava Lord, Demonic King, Frost Lord y hordas colosales. Drops: Armaduras y armas míticas OP. |
 | **When Dungeons Arise (+ Seven Seas)** | *WDA* | Ciudades flotantes y flotas de barcos corsarios en mar abierto. |
 
 ---
