@@ -76,7 +76,7 @@ Bienvenido a la edición optimizada y refinada de **Cenizas del Cataclismo**, aj
 * **Sparse Structures:** Espaciador de mazmorras para mantener distancias equilibradas y evitar lag de ticks.
 * **Towns and Towers:** Aldeas y puestos de avanzada expandidos y habitados.
 * **Lootr:** Cofres de mazmorras y estructuras con botín individual e independiente por jugador (nadie se queda sin recompensas).
-* **Better Dogs (Vanilla Outsider):** Sistema integral de compañeros caninos con personalidades auténticas (Agresivo, Pacifista, Juguetón, Leal), modo guardia centinela, juego de traer palos, caricias con la mano vacía, regalos matutinos, tácticas de manada y genética de linaje.
+* **Doggy Talents Next:** Sistema de entrenamiento, niveles y habilidades caninas RPG. Incluye árbol de talentos (combate, soporte, rastreo), camas, platos de comida, accesorios, collares, posibilidad de montar a tu perro y skins cosméticas integradas.
 * **Gravestone Mod:** Generación de tumbas seguras al morir para proteger el inventario.
 
 ---
@@ -84,7 +84,6 @@ Bienvenido a la edición optimizada y refinada de **Cenizas del Cataclismo**, aj
 ## 🗺️ 6. Interfaz y Visual
 
 * **Diorama Map & Minimap:** Minimapa estilizado en perspectiva isométrica voxelizada en tiempo real. Consume mínimos recursos y es 100% del lado del cliente.
-* **Entity Model Features (EMF) & Entity Texture Features (ETF):** Motor de renderizado para soportar modelos personalizados de entidades (permite renderizar las más de 40 razas de perros del paquete *Better Dogs*).
 * **Just Enough Items (JEI):** Consulta instantánea de recetas, usos y drops de cualquier bloque o ítem.
 * **Jade / WAILA:** Información flotante sobre el bloque, mob o contenedor al que estés mirando.
 
