@@ -77,7 +77,8 @@ Bienvenido a la edición optimizada y refinada de **Cenizas del Cataclismo**, aj
 * **Towns and Towers:** Aldeas y puestos de avanzada expandidos y habitados.
 * **Lootr:** Cofres de mazmorras y estructuras con botín individual e independiente por jugador (nadie se queda sin recompensas).
 * **Doggy Talents Next:** Sistema de entrenamiento, niveles y habilidades caninas RPG. Incluye árbol de talentos (combate, soporte, rastreo), camas, platos de comida, accesorios, collares, posibilidad de montar a tu perro y skins cosméticas integradas.
-* **Gravestone Mod:** Generación de tumbas seguras al morir para proteger el inventario.
+* **Corail Tombstone:** Sistema avanzado de tumbas mágicas al morir. Incluye Llave de Tumba Encantada (configurada al 100% garantizada) para teletransportarse directamente a tu tumba con clic derecho, pergaminos y protección total de inventario.
+* **PlayerRevive:** Mecánica cooperativa de agonía y reanimación. Al recibir daño letal, el jugador cae herido en estado de desangrado (60 segundos) dándole tiempo a sus aliados para acercarse y levantarlo antes de morir definitivamente.
 
 ---
 
